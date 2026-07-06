@@ -11,12 +11,13 @@ It is lightweight, expandable, and tool-agnostic:
 - AI accelerates exploration, reproduction, reporting, and maintenance.
 - Humans decide expected behavior, assertion changes, and regression promotion.
 - Project knowledge preserves durable product understanding across sessions.
+- Project task ledgers preserve agent work progress across sessions.
 
 ## Human-Decides Boundary
 
 AI may explore, reproduce bugs, draft tests, suggest fixes, classify failures, write reports, and recommend improvements.
 
-AI must not automatically change assertions, delete tests, skip tests, redefine expected behavior, promote observed/inferred knowledge to confirmed, update visual baselines, or hide failures. Those actions require human approval.
+AI must not automatically change assertions, delete tests, skip tests, redefine expected behavior, promote observed/inferred knowledge to confirmed, mark human review as approved, update visual baselines, or hide failures. Those actions require human approval.
 
 ## Quick Start
 
@@ -103,6 +104,18 @@ Validate the knowledge structure with:
 npm run qa:knowledge
 ```
 
+## Project Task Ledger
+
+Each project tracks QA work under:
+
+```text
+projects/<project>/tasks/qa-tasks.md
+```
+
+Use it to record what agents were asked to do, current status, blockers, linked outputs, verification commands, and human review points.
+
+Task tracking stays lightweight: one Markdown ledger per project, with links to knowledge, scenarios, evidence, reports, tests, and commits.
+
 ## Structure
 
 - `core/ai/`: canonical QA principles and workflows.
@@ -113,7 +126,7 @@ npm run qa:knowledge
 - `config/`: target and Playwright MCP examples.
 - `mock/`: mock-mode docs, fixtures, and interceptors.
 - `scripts/`: portable CLI helpers.
-- `projects/_template/`: starter project with smoke scenario, knowledge base, and test.
+- `projects/_template/`: starter project with smoke scenario, knowledge base, task ledger, and test.
 
 ## Portability Options
 
@@ -128,13 +141,14 @@ Option C: use it as a Git submodule, package, or project template once usage pat
 1. Copy `projects/_template` to `projects/<project-name>`.
 2. Update `projects/<project-name>/project-context.md`.
 3. Read and update `projects/<project-name>/knowledge/README.md` and relevant knowledge files.
-4. Add target details to an untracked `config/targets.yaml` or export `TARGET_URL`.
-5. Run `QA_PROJECT=<project-name> npm run qa:knowledge`.
-6. Write smoke, regression, and exploratory scenarios.
-7. Run `QA_PROJECT=<project-name> npm run qa:smoke`.
-8. Run `QA_PROJECT=<project-name> npm run qa:regression` after approved regression tests exist.
-9. Use `QA_PROJECT=<project-name> npm run qa:explore -- "charter"` to create session logs.
-10. Use `QA_PROJECT=<project-name> npm run qa:report` to summarize results.
+4. Read and update `projects/<project-name>/tasks/qa-tasks.md`.
+5. Add target details to an untracked `config/targets.yaml` or export `TARGET_URL`.
+6. Run `QA_PROJECT=<project-name> npm run qa:knowledge`.
+7. Write smoke, regression, and exploratory scenarios.
+8. Run `QA_PROJECT=<project-name> npm run qa:smoke`.
+9. Run `QA_PROJECT=<project-name> npm run qa:regression` after approved regression tests exist.
+10. Use `QA_PROJECT=<project-name> npm run qa:explore -- "charter"` to create session logs.
+11. Use `QA_PROJECT=<project-name> npm run qa:report` to summarize results.
 
 For discovery-first work, start by building the knowledge base: product map, personas, journeys, risks, questions, and proposed expected behavior. Only after human review should confirmed behavior become scenario or Playwright assertion truth.
 
@@ -146,5 +160,6 @@ Before QA work, agents should read:
 - `core/ai/agent-operating-model.md`
 - `core/ai/daily-qa-loop.md`
 - `core/ai/knowledge-base-workflow.md`
+- `core/ai/task-tracking-workflow.md`
 
 Adapters should point to these files instead of duplicating policy.

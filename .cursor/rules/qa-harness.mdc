@@ -11,10 +11,11 @@ Before QA-related work, read:
 - `core/ai/agent-operating-model.md`
 - `core/ai/daily-qa-loop.md`
 - `core/ai/knowledge-base-workflow.md`
+- `core/ai/task-tracking-workflow.md`
 
-Use deterministic automation and project knowledge as reviewable sources of truth. Playwright output, traces, screenshots, videos, reports, and `projects/<project>/knowledge/` files outrank unsourced AI judgment.
+Use deterministic automation, project knowledge, and project task ledgers as reviewable sources of truth. Playwright output, traces, screenshots, videos, reports, `projects/<project>/knowledge/`, and `projects/<project>/tasks/qa-tasks.md` outrank unsourced AI judgment.
 
-AI may explore, reproduce bugs, draft tests, suggest fixes, classify failures, write reports, and recommend improvements.
+AI may explore, reproduce bugs, draft tests, suggest fixes, classify failures, write reports, track task progress, and recommend improvements.
 
 AI must not automatically:
 
@@ -23,6 +24,7 @@ AI must not automatically:
 - Update visual baselines.
 - Redefine expected behavior.
 - Promote observed or inferred knowledge to confirmed expected behavior.
+- Mark human review as approved without approval.
 - Hide or relabel failures to make a run look green.
 
 Those actions require explicit human approval.
