@@ -10,9 +10,12 @@ Read and follow:
 - `core/ai/qa-principles.md`
 - `core/ai/agent-operating-model.md`
 - `core/ai/daily-qa-loop.md`
+- `core/ai/knowledge-base-workflow.md`
 
 Use deterministic Playwright automation as the source of truth. Use exploratory workflows for discovery, not release gating.
 
+Read relevant `projects/<project>/knowledge/` files before discovery, scenario updates, or test authoring.
+
 AI may explore, reproduce bugs, draft tests, classify failures, write reports, and recommend improvements.
 
-AI must not automatically change assertions, delete tests, skip tests, update baselines, redefine expected behavior, or hide failures. Ask for human approval first.
+AI must not automatically change assertions, delete tests, skip tests, update baselines, redefine expected behavior, promote observed/inferred knowledge to confirmed, or hide failures. Ask for human approval first.

@@ -5,6 +5,7 @@ Use this loop for regular supervised QA sessions.
 ## Inputs
 
 - Project context.
+- Project knowledge base.
 - Target environment and URL.
 - Scenario files.
 - Recent changes, release notes, or risk areas.
@@ -13,15 +14,17 @@ Use this loop for regular supervised QA sessions.
 ## Workflow
 
 1. Confirm the target and scope for the session.
-2. Run smoke tests with `npm run qa:smoke`.
-3. Review failures and classify them before exploring further.
-4. Run the relevant regression suite or targeted tests.
-5. Execute exploratory charters for high-risk areas.
-6. Collect traces, screenshots, videos, console logs, and notes.
-7. Summarize findings with confidence levels.
-8. Draft bug reports for confirmed issues.
-9. Suggest regression tests for approved bug reports.
-10. Update scenarios after human review.
+2. Read `project-context.md` and relevant `knowledge/*.md` files.
+3. Run smoke tests with `npm run qa:smoke`.
+4. Review failures and classify them before exploring further.
+5. Run the relevant regression suite or targeted tests.
+6. Execute exploratory charters for high-risk areas.
+7. Collect traces, screenshots, videos, console logs, and notes.
+8. Summarize findings with confidence levels.
+9. Add proposed knowledge updates with source and evidence.
+10. Draft bug reports for confirmed issues.
+11. Suggest regression tests for approved bug reports.
+12. Update confirmed expectations and scenarios only after human review.
 
 ## Output
 
@@ -31,6 +34,7 @@ Each session should produce:
 - Evidence artifact paths.
 - Confirmed issues.
 - Open questions.
+- Knowledge updates proposed.
 - Suggested regressions.
 - Scenario-library update suggestions.
 

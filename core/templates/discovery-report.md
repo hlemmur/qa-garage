@@ -12,6 +12,14 @@
 
 List pages, workflows, and major UI areas discovered.
 
+## Knowledge Base Updates
+
+List durable knowledge added or proposed during discovery.
+
+| File | Summary | Status | Source | Evidence |
+| --- | --- | --- | --- | --- |
+|  |  | observed | app exploration |  |
+
 ## Core Journeys
 
 1.
@@ -33,6 +41,10 @@ List suggested charters with risk areas.
 ## Risks And Unknowns
 
 Questions for the QA Lead or product team.
+
+## Proposed Confirmations
+
+Observed or inferred behaviors that need human approval before becoming confirmed expected behavior.
 
 ## Setup Blockers
 

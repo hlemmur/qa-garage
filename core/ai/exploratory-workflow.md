@@ -15,13 +15,14 @@ Every exploratory run should state:
 
 ## Agent Steps
 
-1. Read the charter and project context.
+1. Read the charter, project context, and relevant project knowledge files.
 2. Map the main happy path before testing variants.
 3. Probe edges around data entry, navigation, refresh, permissions, errors, and recovery.
-4. Record observations as notes, not confirmed bugs.
+4. Record observations as notes or knowledge entries, not confirmed bugs.
 5. Capture evidence for anything suspicious.
 6. Attempt one clean reproduction for high-signal issues.
-7. Summarize findings with confidence and suggested next steps.
+7. Propose knowledge updates as `observed`, `inferred`, `unknown`, or `outdated`.
+8. Summarize findings with confidence and suggested next steps.
 
 ## Evidence To Capture
 
@@ -38,5 +39,6 @@ Stop and ask the human when:
 - Login or MFA blocks access.
 - A destructive action is required.
 - Expected behavior is ambiguous.
+- Existing knowledge conflicts with new evidence.
 - Test data could affect real users.
 - The agent cannot reproduce a suspected issue after a reasonable attempt.

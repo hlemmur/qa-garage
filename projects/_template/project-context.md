@@ -34,3 +34,7 @@ Document account roles and setup notes without storing passwords or secrets.
 2. Core user journeys.
 3. Exploratory charters.
 4. Approved regressions.
+
+## Knowledge Base
+
+Read and maintain `knowledge/` as the durable project memory. Discovery agents may add observed or inferred knowledge with evidence, but confirmed expected behavior requires human approval.

@@ -16,7 +16,7 @@ Work in tracer bullets:
 
 Good Playwright tests:
 
-- Start from a scenario file or approved bug report.
+- Start from a scenario file, approved bug report, or confirmed knowledge entry.
 - Use stable user-facing locators.
 - Assert observable outcomes.
 - Keep setup explicit.
@@ -35,7 +35,7 @@ Avoid:
 Before adding a regression test, confirm:
 
 - The bug or risk is approved for automation.
-- Expected behavior is written down.
+- Expected behavior is written down in `expected-behavior.md`, `decisions.md`, an approved scenario, or an approved bug report.
 - The test can run deterministically.
 - Required accounts and data are available.
 - The failure mode would be understandable in CI.
@@ -47,3 +47,4 @@ Before adding a regression test, confirm:
 - Is the test narrow enough to diagnose?
 - Is the test broad enough to protect the user journey?
 - Are evidence and scenario files linked?
+- Is the relevant knowledge entry confirmed or explicitly approved for this test?
