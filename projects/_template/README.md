@@ -14,6 +14,7 @@ Copy this directory to create a project-specific black-box QA harness target.
 
 ```bash
 QA_PROJECT=_template npm run qa:smoke
+QA_PROJECT=_template npm run qa:regression
 QA_PROJECT=_template npm run qa:explore -- "template exploratory charter"
 QA_PROJECT=_template npm run qa:report
 ```

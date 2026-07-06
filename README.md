@@ -24,6 +24,7 @@ AI must not automatically change assertions, delete tests, skip tests, redefine 
 npm install
 npx playwright install chromium
 npm run qa:smoke
+npm run qa:regression
 TARGET_URL='data:text/html,<title>Smoke Target</title><h1>OK</h1>' npm run qa:smoke
 npm run qa:report
 ```
@@ -66,6 +67,7 @@ Include the same badge in session logs and reports when the run depends on mock 
 
 ```bash
 npm run qa:smoke
+npm run qa:regression
 npm run qa:headed
 npm run qa:trace
 npm run qa:codegen
@@ -128,10 +130,11 @@ Option C: use it as a Git submodule, package, or project template once usage pat
 3. Read and update `projects/<project-name>/knowledge/README.md` and relevant knowledge files.
 4. Add target details to an untracked `config/targets.yaml` or export `TARGET_URL`.
 5. Run `QA_PROJECT=<project-name> npm run qa:knowledge`.
-6. Write smoke and exploratory scenarios.
+6. Write smoke, regression, and exploratory scenarios.
 7. Run `QA_PROJECT=<project-name> npm run qa:smoke`.
-8. Use `QA_PROJECT=<project-name> npm run qa:explore -- "charter"` to create session logs.
-9. Use `QA_PROJECT=<project-name> npm run qa:report` to summarize results.
+8. Run `QA_PROJECT=<project-name> npm run qa:regression` after approved regression tests exist.
+9. Use `QA_PROJECT=<project-name> npm run qa:explore -- "charter"` to create session logs.
+10. Use `QA_PROJECT=<project-name> npm run qa:report` to summarize results.
 
 For discovery-first work, start by building the knowledge base: product map, personas, journeys, risks, questions, and proposed expected behavior. Only after human review should confirmed behavior become scenario or Playwright assertion truth.
 

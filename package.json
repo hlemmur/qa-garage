@@ -6,6 +6,7 @@
   "type": "commonjs",
   "scripts": {
     "qa:smoke": "playwright test --grep @smoke",
+    "qa:regression": "playwright test --grep @regression",
     "qa:headed": "playwright test --headed",
     "qa:trace": "playwright show-report",
     "qa:codegen": "playwright codegen",
