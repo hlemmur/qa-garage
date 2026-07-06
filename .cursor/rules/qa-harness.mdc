@@ -1,0 +1,26 @@
+---
+description: QA harness operating rules
+alwaysApply: true
+---
+
+This repository is a portable AI-native QA harness.
+
+Before QA-related work, read:
+
+- `core/ai/qa-principles.md`
+- `core/ai/agent-operating-model.md`
+- `core/ai/daily-qa-loop.md`
+
+Use deterministic automation as the source of truth. Playwright output, traces, screenshots, videos, and reports outrank unsourced AI judgment.
+
+AI may explore, reproduce bugs, draft tests, suggest fixes, classify failures, write reports, and recommend improvements.
+
+AI must not automatically:
+
+- Change assertions.
+- Delete or skip tests.
+- Update visual baselines.
+- Redefine expected behavior.
+- Hide or relabel failures to make a run look green.
+
+Those actions require explicit human approval.

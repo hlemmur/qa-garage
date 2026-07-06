@@ -1,0 +1,25 @@
+---
+description: Playwright authoring rules for QA harness tests
+globs:
+  - "**/*.spec.ts"
+alwaysApply: false
+---
+
+Before writing or changing Playwright tests, read:
+
+- `core/ai/qa-principles.md`
+- `core/ai/test-authoring-workflow.md`
+
+Use Playwright for deterministic smoke, regression, visual, and user-journey coverage.
+
+Prefer:
+
+- User-facing locators.
+- Observable assertions.
+- Clear setup and preconditions.
+- Small, diagnostic tests.
+- Traces and screenshots for failure evidence.
+
+Avoid arbitrary waits, hidden retries, broad assertions, and implementation-coupled selectors.
+
+Do not change assertions, delete tests, skip tests, or update baselines without human approval.
