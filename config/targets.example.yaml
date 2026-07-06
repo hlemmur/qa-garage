@@ -1,0 +1,11 @@
+defaultProject: _template
+
+targets:
+  _template:
+    name: Template target
+    project: _template
+    environment: local
+    targetUrl: "data:text/html,<title>Smoke Target</title><h1>OK</h1>"
+    notes:
+      - Replace with a staging or production URL for real black-box QA.
+      - Keep secrets in environment variables or untracked local config.
