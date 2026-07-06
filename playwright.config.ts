@@ -4,6 +4,7 @@ const targetUrl = process.env.TARGET_URL;
 
 export default defineConfig({
   testDir: './projects',
+  globalSetup: './global-setup.ts',
   timeout: 30_000,
   expect: {
     timeout: 5_000
