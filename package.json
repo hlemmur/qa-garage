@@ -13,6 +13,7 @@
     "qa:report": "ts-node scripts/generate-report.ts",
     "qa:explore": "ts-node scripts/explore.ts",
     "qa:knowledge": "ts-node scripts/validate-knowledge.ts",
+    "qa:tasks": "ts-node scripts/validate-tasks.ts",
     "test": "playwright test"
   },
   "keywords": [
