@@ -1,0 +1,17 @@
+---
+description: Playwright QA authoring conventions
+globs:
+  - "**/*.spec.ts"
+alwaysApply: false
+---
+
+Before writing or changing Playwright tests, read:
+
+- `core/ai/qa-principles.md`
+- `core/ai/test-authoring-workflow.md`
+
+Write tests against observable browser behavior. Prefer stable user-facing locators, clear setup, and targeted assertions.
+
+Do not weaken assertions, skip tests, delete tests, or update baselines without explicit human approval.
+
+Run the smallest relevant Playwright command before broad suites.

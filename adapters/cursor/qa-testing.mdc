@@ -1,0 +1,18 @@
+---
+description: Portable QA harness rules
+alwaysApply: true
+---
+
+For QA tasks, use the portable QA harness.
+
+Read and follow:
+
+- `core/ai/qa-principles.md`
+- `core/ai/agent-operating-model.md`
+- `core/ai/daily-qa-loop.md`
+
+Use deterministic Playwright automation as the source of truth. Use exploratory workflows for discovery, not release gating.
+
+AI may explore, reproduce bugs, draft tests, classify failures, write reports, and recommend improvements.
+
+AI must not automatically change assertions, delete tests, skip tests, update baselines, redefine expected behavior, or hide failures. Ask for human approval first.
