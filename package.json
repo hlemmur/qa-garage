@@ -1,0 +1,30 @@
+{
+  "name": "qa-harness",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Portable AI-native QA harness with Playwright as the deterministic source of truth.",
+  "type": "commonjs",
+  "scripts": {
+    "qa:smoke": "playwright test --grep @smoke",
+    "qa:headed": "playwright test --headed",
+    "qa:trace": "playwright show-report",
+    "qa:codegen": "playwright codegen",
+    "qa:report": "ts-node scripts/generate-report.ts",
+    "qa:explore": "ts-node scripts/explore.ts",
+    "test": "playwright test"
+  },
+  "keywords": [
+    "qa",
+    "playwright",
+    "ai",
+    "testing"
+  ],
+  "license": "MIT",
+  "devDependencies": {
+    "@playwright/test": "^1.61.1",
+    "@types/node": "^26.1.0",
+    "ts-node": "^10.9.2",
+    "typescript": "^6.0.3",
+    "yaml": "^2.9.0"
+  }
+}
