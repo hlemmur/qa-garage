@@ -10,7 +10,7 @@ This is a thin guardrail wrapper. The craft lives in the vendored skills (`qa-pr
 Before acting, read:
 
 - `core/ai/qa-principles.md`
-- `core/ai/garage-operating-model.md`
+- `core/ai/qa-garage-operating-model.md`
 - `core/ai/qa-project-context-model.md`
 - The target project's `.agents/qa-project-context.md`
 

@@ -4,7 +4,7 @@ QA Garage lets a QA Lead or Test Architect supervise AI agents while determinist
 
 It is lightweight, expandable, and tool-agnostic:
 
-- A thin garage layer (Markdown rules, operating model, CLI scripts) keeps the human in control.
+- A thin QA Garage harness layer (Markdown rules, operating model, CLI scripts) keeps the human in control.
 - A vendored library of QA skills in `.agents/skills/` supplies the QA craft (context, risk, strategy, journeys, exploration, repro, Playwright authoring, reporting).
 - Cursor, Claude Code, Codex, and future tools use thin adapters that point at the same core.
 - Playwright provides deterministic smoke and regression coverage; Playwright MCP supports AI-assisted exploration.
@@ -18,7 +18,7 @@ AI must not automatically change assertions, delete tests, skip tests, redefine 
 
 ## Skills Layer
 
-QA craft lives in vendored skills under `.agents/skills/` (installed from the open skills ecosystem, pinned in [skills-lock.json](skills-lock.json)). These stay pristine so they can be updated with `npx skills update`. The garage layer never edits skill bodies; it adapts them through conventions and guardrails in `core/ai/garage-operating-model.md`, which also contains the skill-routing table (which skill owns which step).
+QA craft lives in vendored skills under `.agents/skills/` (installed from the open skills ecosystem, pinned in [skills-lock.json](skills-lock.json)). These stay pristine so they can be updated with `npx skills update`. The QA garage layer never edits skill bodies; it adapts them through conventions and guardrails in `core/ai/qa-garage-operating-model.md`, which also contains the skill-routing table (which skill owns which step).
 
 ## Knowledge Model
 
@@ -112,8 +112,8 @@ npm test
 
 ## Structure
 
-- `core/ai/`: garage vision, operating model, knowledge model, loops.
-- `core/skills/`: garage-specific skill wrappers (task tracking).
+- `core/ai/`: QA Garage vision, operating model, knowledge model, loops.
+- `core/skills/`: qa-garage-specific skill wrappers (task tracking).
 - `core/templates/`: reusable report, bug, scenario, and session templates.
 - `.agents/skills/`: vendored QA craft skills (pristine, updatable).
 - `adapters/`: thin wrappers for Codex/general agents, Claude Code, and Cursor.
@@ -126,9 +126,9 @@ npm test
 
 ## Portability Options
 
-Option A: copy the garage into a target repository.
+Option A: copy the qa-garage into a target repository.
 
-Option B: keep the garage as a separate repository and point it at target URLs. Best for early black-box QA without code access.
+Option B: keep the qa-garage as a separate repository and point it at target URLs. Best for early black-box QA without code access.
 
 Option C: use it as a Git submodule, package, or project template once usage patterns stabilize.
 
@@ -150,7 +150,7 @@ Only after human review should confirmed behavior become scenario or Playwright 
 Before QA work, agents should read:
 
 - `core/ai/qa-principles.md`
-- `core/ai/garage-operating-model.md`
+- `core/ai/qa-garage-operating-model.md`
 - `core/ai/qa-project-context-model.md`
 - `core/ai/daily-qa-loop.md`
 - `core/ai/task-tracking-workflow.md`

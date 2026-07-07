@@ -1,6 +1,6 @@
-# Garage Operating Model
+# QA Garage Operating Model
 
-The garage is a thin layer over a library of vendored QA skills (`.agents/skills/`). AI agents act as supervised QA operators; the human QA Lead owns priority, expected behavior, risk acceptance, and final approval. This document defines how agents orchestrate the skills, where artifacts live, which "hat" applies, and what requires approval.
+The QA Garage is a thin harness layer over a library of vendored QA skills (`.agents/skills/`). AI agents act as supervised QA operators; the human QA Lead owns priority, expected behavior, risk acceptance, and final approval. This document defines how agents orchestrate the skills, where artifacts live, which "hat" applies, and what requires approval.
 
 ## Path & Project Conventions
 

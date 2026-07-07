@@ -3,17 +3,17 @@ description: QA Garage operating rules
 alwaysApply: true
 ---
 
-This repository is a portable AI-native QA garage. It wraps a library of vendored QA skills in `.agents/skills/` with a thin garage layer that keeps the human in control.
+This repository is a portable AI-native QA Garage. It wraps a library of vendored QA skills in `.agents/skills/` with a thin harness layer that keeps the human in control.
 
 Before QA-related work, read:
 
 - `core/ai/qa-principles.md`
-- `core/ai/garage-operating-model.md`
+- `core/ai/qa-garage-operating-model.md`
 - `core/ai/qa-project-context-model.md`
 - `core/ai/daily-qa-loop.md`
 - `core/ai/task-tracking-workflow.md`
 
-Then use the vendored skills in `.agents/skills/` for QA craft (context, risk, strategy, journeys, exploration, repro, Playwright authoring, reporting). The garage layer routes which skill applies; see the skill-routing table in `core/ai/garage-operating-model.md`.
+Then use the vendored skills in `.agents/skills/` for QA craft (context, risk, strategy, journeys, exploration, repro, Playwright authoring, reporting). The harness layer routes which skill applies; see the skill-routing table in `core/ai/qa-garage-operating-model.md`.
 
 Each target project is treated as its own QA root at `projects/<project>/`, with a single source of truth at `projects/<project>/.agents/qa-project-context.md`. Targets are black-box: skip codebase detection and source context from docs and exploration.
 

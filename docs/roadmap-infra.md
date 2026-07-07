@@ -1,6 +1,6 @@
 # Infrastructure Roadmap (Design Only)
 
-This document describes the planned infrastructure for operating QA Garage across devices, scheduled runs, notifications, and a lightweight cockpit. Nothing here is implemented yet; it informs future work after the core garage rework is stable.
+This document describes the planned infrastructure for operating QA Garage across devices, scheduled runs, notifications, and a lightweight cockpit. Nothing here is implemented yet; it informs future work after the core qa-garage rework is stable.
 
 ## Goals
 
@@ -60,11 +60,11 @@ flowchart TD
 - Publish Playwright HTML report to GitHub Pages (per project or combined index).
 - Optional Cursor cloud agent post-run: triage failures with `ai-bug-triage`, draft bug reports, update `known-issues.md` (human approves filing).
 
-## Separation: Garage vs Project Artifacts
+## Separation: QA Garage vs Project Artifacts
 
 - **In git (durable, light):** `core/`, `.agents/skills/`, scripts, `projects/<p>/.agents/qa-project-context.md`, strategy/plan/risk/journeys, scenarios, tests, `reports/*.md`, decisions/questions.
 - **Outside git (volatile, heavy):** traces, screenshots, videos, large HTML reports → CI artifacts or object storage, linked from Markdown.
-- **Future:** extract garage to its own repo (submodule/package) when testing multiple products; keep `core/` separable now.
+- **Future:** extract qa-garage to its own repo (submodule/package) when testing multiple products; keep `core/` separable now.
 
 ## Readiness Gate in CI
 

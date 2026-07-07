@@ -15,15 +15,15 @@ For a target project, place it where Claude Code expects project memory, then ad
 Claude should read before QA work:
 
 - `core/ai/qa-principles.md`
-- `core/ai/garage-operating-model.md`
+- `core/ai/qa-garage-operating-model.md`
 - `core/ai/qa-project-context-model.md`
 - `core/ai/daily-qa-loop.md`
 
-QA craft lives in the vendored skills under `.agents/skills/`; the skill-routing table is in `core/ai/garage-operating-model.md`.
+QA craft lives in the vendored skills under `.agents/skills/`; the skill-routing table is in `core/ai/qa-garage-operating-model.md`.
 
 ## MCP
 
-Use `config/mcp.playwright.json` as the canonical Playwright MCP server config. If Claude Code requires a different config location, copy the contents without changing the garage-level source.
+Use `config/mcp.playwright.json` as the canonical Playwright MCP server config. If Claude Code requires a different config location, copy the contents without changing the qa-garage-level source.
 
 ## Guardrail
 

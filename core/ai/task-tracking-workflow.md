@@ -93,7 +93,7 @@ AI must not:
 6. Mark the task `done`, `blocked`, or `cancelled`.
 7. Add follow-up tasks when needed.
 
-## Relationship To Other Garage Layers
+## Relationship To Other QA Garage Layers
 
 - Project context (`.agents/qa-project-context.md`): what we know.
 - Scenario library: what we intend to test.

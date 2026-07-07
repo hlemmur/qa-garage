@@ -3,17 +3,17 @@ description: Portable QA Garage rules
 alwaysApply: true
 ---
 
-For QA tasks, use the portable QA Garage: a thin garage layer over vendored QA skills in `.agents/skills/`.
+For QA tasks, use the portable QA Garage: a thin QA Garage harness layerover vendored QA skills in `.agents/skills/`.
 
 Read and follow:
 
 - `core/ai/qa-principles.md`
-- `core/ai/garage-operating-model.md`
+- `core/ai/qa-garage-operating-model.md`
 - `core/ai/qa-project-context-model.md`
 - `core/ai/daily-qa-loop.md`
 - `core/ai/task-tracking-workflow.md`
 
-Use deterministic Playwright automation as the source of truth. Use exploratory workflows for discovery, not release gating. Use the vendored skills for craft; the skill-routing table is in `core/ai/garage-operating-model.md`.
+Use deterministic Playwright automation as the source of truth. Use exploratory workflows for discovery, not release gating. Use the vendored skills for craft; the skill-routing table is in `core/ai/qa-garage-operating-model.md`.
 
 Each target project is its own QA root at `projects/<project>/` with a single source of truth at `.agents/qa-project-context.md`. Targets are black-box: source from docs and exploration. Read it (plus relevant `journeys/`, `risk-matrix.md`, scenarios) before discovery, scenario updates, or test authoring.
 

@@ -35,14 +35,14 @@ Black-box: the target's implementation is not directly observable. Recorded at t
 
 ## Test Stack
 
-- E2E / smoke / regression: Playwright (this garage), projects/postdocs-ai/tests/e2e/.
+- E2E / smoke / regression: Playwright (this qa-garage), projects/postdocs-ai/tests/e2e/.
 - Exploration: Playwright MCP (agent-driven, accessibility-tree first).
 - AI-feature testing: ai-system-testing skill (workflow completion and output presence, not scientific quality).
 - Visual / accessibility / API: none selected yet.
 
 ## CI/CD
 
-- Platform: none yet (garage-driven runs, local/manual). CI cron is planned in docs/roadmap-infra.md.
+- Platform: none yet (qa-garage-driven runs, local/manual). CI cron is planned in docs/roadmap-infra.md.
 - When tests run: manually via qa:* commands during Phase 1.
 - Artifacts saved: Playwright traces, screenshots, videos, HTML report, session logs.
 
@@ -75,7 +75,7 @@ Product and delivery risk. Full scored matrix in risk-matrix.md.
 
 ## Team
 
-- QA: solo QA Lead plus AI agents operating this garage.
+- QA: solo QA Lead plus AI agents operating this qa-garage.
 - Ownership model: QA Lead owns strategy, expected behavior, and approvals; agents execute under the human-decides guardrails.
 - QA involvement: black-box, post-release testing of production; shift-left not yet possible without repo access.
 

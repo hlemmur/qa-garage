@@ -20,7 +20,7 @@ Black-box: record what is known or observed about the target, not this repo's st
 - **Integrations:** [concrete third-party services, e.g. Supabase, TipTap, Vercel AI, Stripe]
 
 ## Test Stack
-- **E2E:** Playwright (this garage), `projects/<project>/tests/e2e/`
+- **E2E:** Playwright (this qa-garage), `projects/<project>/tests/e2e/`
 - **Exploration:** Playwright MCP (agent-driven)
 - **Visual / a11y / API:** [None selected yet, or tool]
 

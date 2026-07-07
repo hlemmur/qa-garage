@@ -1,18 +1,18 @@
 # Agent Instructions
 
-This repository is a portable AI-native QA Garage: a thin garage layer over vendored QA skills in `.agents/skills/`.
+This repository is a portable AI-native QA Garage: a thin harness layer over vendored QA skills in `.agents/skills/`.
 
 Before QA-related work, read:
 
 - `core/ai/qa-principles.md`
-- `core/ai/garage-operating-model.md`
+- `core/ai/qa-garage-operating-model.md`
 - `core/ai/qa-project-context-model.md`
 - `core/ai/daily-qa-loop.md`
 - `core/ai/task-tracking-workflow.md`
 - The target project's `.agents/qa-project-context.md`
 - Relevant `journeys/`, `risk-matrix.md`, scenarios, and `tasks/qa-tasks.md`
 
-Use the vendored skills in `.agents/skills/` for QA craft; the skill-routing table lives in `core/ai/garage-operating-model.md`.
+Use the vendored skills in `.agents/skills/` for QA craft; the skill-routing table lives in `core/ai/qa-garage-operating-model.md`.
 
 ## Rules
 

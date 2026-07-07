@@ -8,21 +8,21 @@ Copy or reference:
 
 - `adapters/AGENTS.md`
 
-For a target project, place the file at the project root and adjust paths if the garage is external.
+For a target project, place the file at the project root and adjust paths if the qa-garage is external.
 
 ## Required Reading
 
 Before QA work, agents should read:
 
 - `core/ai/qa-principles.md`
-- `core/ai/garage-operating-model.md`
+- `core/ai/qa-garage-operating-model.md`
 - `core/ai/qa-project-context-model.md`
 - `core/ai/daily-qa-loop.md`
 - Relevant project scenarios under `projects/<project>/scenarios/`
 
 ## Skills
 
-QA craft lives in vendored skills under `.agents/skills/` (pinned in `skills-lock.json`, updatable with `npx skills update`). The garage-specific wrappers under `core/skills/` stay thin and point back to the core workflows. The skill-routing table is in `core/ai/garage-operating-model.md`.
+QA craft lives in vendored skills under `.agents/skills/` (pinned in `skills-lock.json`, updatable with `npx skills update`). The qa-garage-specific wrappers under `core/skills/` stay thin and point back to the core workflows. The skill-routing table is in `core/ai/qa-garage-operating-model.md`.
 
 ## Commands
 

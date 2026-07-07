@@ -1,6 +1,6 @@
 # QA Principles
 
-This QA garage exists to let a professional QA engineer operate as QA Lead and Test Architect while AI agents accelerate execution under supervision. QA craft lives in vendored skills under `.agents/skills/`; the thin garage layer keeps the human in control.
+This QA Garage exists to let a professional QA engineer operate as QA Lead and Test Architect while AI agents accelerate execution under supervision. QA craft lives in vendored skills under `.agents/skills/`; the thin QA Garage harness layerkeeps the human in control.
 
 ## Source Of Truth
 
@@ -16,7 +16,7 @@ AI may:
 - Reproduce suspected defects.
 - Draft bug reports, test cases, and regression candidates.
 - Classify failures and summarize evidence.
-- Recommend product, test, and garage improvements.
+- Recommend product, test, and qa-garage improvements.
 
 AI must not automatically:
 
@@ -38,7 +38,7 @@ The portable layer is:
 - Playwright tests and reports.
 - Evidence artifacts.
 
-Cursor rules, Claude memory files, and Codex agent files are adapters. They point to these canonical files and should stay thin. Vendored skills in `.agents/skills/` are the QA craft library; the garage layer orchestrates them and never edits their bodies.
+Cursor rules, Claude memory files, and Codex agent files are adapters. They point to these canonical files and should stay thin. Vendored skills in `.agents/skills/` are the QA craft library; the QA garage layer orchestrates them and never edits their bodies.
 
 ## Lightweight Expansion
 

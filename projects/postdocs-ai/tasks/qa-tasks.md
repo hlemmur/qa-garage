@@ -49,7 +49,7 @@ Analyze public user documentation at https://learn.postdocs.ai/ and create the i
 
 #### Progress Notes
 
-- 2026-07-07: Read required QA garage workflows.
+- 2026-07-07: Read required QA Garage workflows.
 - 2026-07-07: Reviewed public docs pages: Introduction, Features, Guides, Tips & Tricks, and FAQ.
 - 2026-07-07: Created initial knowledge and captured open questions for access, test data, mock mode, AI output, grant data, collaboration, and export.
 - 2026-07-07: Migrated to the single-source model (see TASK-003).
