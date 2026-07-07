@@ -12,11 +12,11 @@
 
 List pages, workflows, and major UI areas discovered.
 
-## Knowledge Base Updates
+## Context Updates
 
-List durable knowledge added or proposed during discovery.
+Durable facts added or proposed during discovery. Route each to its owner artifact (`.agents/qa-project-context.md` section, `journeys/`, `risk-matrix.md`, `test-data.md`).
 
-| File | Summary | Status | Source | Evidence |
+| Artifact / Section | Summary | Status | Source | Evidence |
 | --- | --- | --- | --- | --- |
 |  |  | observed | app exploration |  |
 

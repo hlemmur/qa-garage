@@ -8,7 +8,7 @@ description: Use when creating, updating, reviewing, or summarizing per-project 
 Before acting, read:
 
 - `core/ai/qa-principles.md`
-- `core/ai/agent-operating-model.md`
+- `core/ai/garage-operating-model.md`
 - `core/ai/task-tracking-workflow.md`
 - The target project's `tasks/qa-tasks.md`
 
