@@ -6,22 +6,22 @@ Questions awaiting a human answer. `qa:review` aggregates these into `open-items
 
 ### Q-001: What target environment should QA use for authenticated testing?
 
-- Status: open
+- Status: answered
 - Blocking: yes
 - Raised by: agent
 - Date: 2026-07-07
 - Why it matters: no staging is documented; testing production needs explicit approval and a safe workspace.
-- Answer:
+- Answer: Production only for now — https://app.postdocs.ai/ — approved for exploratory testing (QA Lead, 2026-07-07). No staging available.
 
 ### Q-002: Which test accounts and sign-in path are approved for automation?
 
-- Status: open
+- Status: answered
 - Blocking: yes
 - Raised by: agent
 - Date: 2026-07-07
 - Why it matters: institutional SSO may block automation; smoke and all authenticated tests depend on this.
 - Proposed answer / options: dedicated SSO test account, Microsoft sign-in account, or both.
-- Answer:
+- Answer: Microsoft sign-in with QA Lead personal account `leka.mulyar@gmail.com` (approved 2026-07-07). Auth uses passkey (Touch ID on Mac) — not automatable; human must complete sign-in for exploratory sessions and any auth-gated Playwright runs until a non-passkey test account is provisioned.
 
 ### Q-003: What privacy/security sign-off exists for upload and collaboration tests?
 

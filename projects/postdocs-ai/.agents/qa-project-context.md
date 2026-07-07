@@ -11,7 +11,7 @@ Single source of truth for postdocs-ai. Black-box target: facts are sourced from
 - URLs:
   - Production app: https://app.postdocs.ai/
   - Documentation: https://learn.postdocs.ai/
-  - Staging: unknown (not documented).
+  - Staging: none available (confirmed by QA Lead, 2026-07-07).
 - Product pillars (docs): Browse (grant discovery), Write (drafting workflow), Review (eligibility + assessment). Source: docs, inferred.
 - Key user flows (drive coverage priority; full maps in `journeys/` and `reference/`):
   - Sign in at app.postdocs.ai via university SSO or Microsoft.
@@ -53,9 +53,10 @@ Black-box: the target's implementation is not directly observable. Recorded at t
 
 ## Environments
 
-- Target under test: production app at https://app.postdocs.ai/ (no staging documented).
-- Access model: institutional partnerships; access via research office or product contact (timothy@postdocs.ai). Test accounts unknown (blocking).
-- Mock vs real integrations: product mock mode for AI generation, SSO, email, and document parsing is unknown (blocking for local deterministic testing).
+- Target under test: production app at https://app.postdocs.ai/ — approved for exploratory testing (D-001). No staging available.
+- Access model: institutional partnerships; access via research office or product contact (timothy@postdocs.ai).
+- Approved test account: Microsoft sign-in `leka.mulyar@gmail.com` (D-002). Passkey/Touch ID — human-in-the-loop required for auth; not Playwright-automatable yet.
+- Mock vs real integrations: product mock mode for AI generation, SSO, email, and document parsing is unknown (Q-004).
 
 ## Quality Goals
 
@@ -76,7 +77,7 @@ Product and delivery risk. Full scored matrix in risk-matrix.md.
 | Export fidelity (.docx) | High | Lost structure breaks funder-portal submission | Validate exported content and formatting against approved scenarios |
 | Collaboration correctness | High | Permission leakage or lost edits across institutions | Test invite, permission levels, concurrent edit, comments |
 | AI output quality | High | Plausible-but-wrong content misleads researchers | Keep quality exploratory unless human sets acceptance criteria |
-| Authentication (SSO) | High | Blocks all authenticated testing; varies by institution | Confirm test accounts and a stable smoke path |
+| Authentication (SSO) | High | Passkey blocks unattended automation; human must sign in | Microsoft account approved; smoke path TBD (Q-005) |
 
 ## Team
 
