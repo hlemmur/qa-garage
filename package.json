@@ -13,8 +13,10 @@
     "qa:report": "ts-node scripts/generate-report.ts",
     "qa:explore": "ts-node scripts/explore.ts",
     "qa:knowledge": "ts-node scripts/validate-knowledge.ts",
+    "qa:review": "ts-node scripts/review.ts",
     "qa:tasks": "ts-node scripts/validate-tasks.ts",
-    "test": "playwright test"
+    "test": "playwright test",
+    "test:scripts": "node --require ts-node/register --test scripts/lib/*.test.ts"
   },
   "keywords": [
     "qa",
