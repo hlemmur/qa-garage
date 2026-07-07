@@ -1,47 +1,52 @@
 # Test Data — postdocs-ai
 
-Accounts, fixtures, and data needed to exercise real scenarios including concurrency, permissions, and invitations. No secrets in this file. Source: https://learn.postdocs.ai/.
+Accounts, fixtures, and data needed to exercise real scenarios including concurrency, permissions, and invitations. **No secrets in this file.** Source: https://learn.postdocs.ai/; approved scope in D-003.
+
+## Approved email allowlist
+
+All collaborator invites and test correspondence must use only these addresses:
+
+| Email | postdocs.ai status | Role |
+|-------|-------------------|------|
+| `leka.mulyar@gmail.com` | registered | Proposal owner (primary); Microsoft sign-in, passkey/Touch ID |
+| `omulyar.work@gmail.com` | registered | Collaborator (editor/commenter/viewer scenarios) |
+| `lena.m.coaching@gmail.com` | not registered | Invite-acceptance flow (pending invite → sign up/sign in) |
 
 ## Account Matrix
 
-Collaboration and permission testing needs multiple distinct accounts.
-
-| Role / Type | Count needed | Purpose / Scenarios | Status |
-|-------------|--------------|---------------------|--------|
-| Proposal owner (Microsoft) | 1 | Create proposal, upload, generate, invite, export | approved — `leka.mulyar@gmail.com` (D-002); passkey/Touch ID, human-in-the-loop auth |
-| Editor collaborator | 1 | Concurrent editing, comments (R-005) | unknown — needs second account |
-| Commenter/viewer collaborator | 1 | Permission-boundary checks (read/comment only) | unknown — needs second account |
-| Invited-not-yet-accepted | 1 | Invitation acceptance flow | unknown — needs second account |
-| Cross-institution collaborator | 1 | Cross-institution access + SSO variation | unknown |
-| University SSO account | 0–1 | Alternative auth path | not provisioned |
-
-At least 4-5 distinct accounts are required to cover collaboration, permission boundaries, and concurrency without reusing identities.
+| Role / Type | Account | Purpose / Scenarios | Status |
+|-------------|---------|---------------------|--------|
+| Proposal owner | `leka.mulyar@gmail.com` | Create proposal, upload, generate, invite, export | approved (D-002); passkey — human-in-the-loop auth |
+| Registered collaborator | `omulyar.work@gmail.com` | Co-edit, comments, permission boundaries (R-005) | approved (D-003); credentials out-of-band |
+| Invite-acceptance (cold) | `lena.m.coaching@gmail.com` | Invitation email → accept → first access | approved (D-003); not yet registered |
+| University SSO account | — | Alternative auth path | not provisioned |
 
 ## Data Sets / Fixtures
 
-- Non-sensitive mock research synopsis and background materials — docs-supported types: PDF, Word, PowerPoint (`docs:https://learn.postdocs.ai/tips-and-tricks`). Fixtures to be created; never real confidential proposals. Size limits unknown (Q-007).
-- Known open grant call (e.g. a VR/Formas/Vinnova/Energimyndigheten call) for template-load and discovery checks - identify a stable example.
+- Synthetic/mock/generated content only — approved for exploratory uploads (D-003). No real research, unpublished papers, or personal data.
+- Supported file types per docs: PDF, Word, PowerPoint. Fixtures to be created under `projects/postdocs-ai/fixtures/` when needed. Size limits unknown (Q-007).
+- Known open grant call (e.g. VR/Formas/Vinnova/Energimyndigheten) — identify a stable example during Phase 0B exploration.
 
 ## Creation & Cleanup Strategy
 
-- Creation: manual/approved accounts (no self-serve signup documented).
-- Cleanup: generated proposals and invites must be cleaned from approved test workspaces; do not invite real users.
+- Creation: approved accounts above; mock fixtures generated in-repo.
+- Cleanup: delete test proposals and pending invites from owner workspace after sessions; do not invite addresses outside the allowlist.
 
 ## Race / Concurrency / Permission Scenarios
 
-- Two accounts editing the same section simultaneously (lost-update / conflict handling).
-- Viewer attempts an edit (must be denied).
-- Revoked collaborator loses access immediately.
-- Invitation accepted from a different institution.
+- Owner + `omulyar.work@gmail.com` editing the same section simultaneously (lost-update / conflict handling).
+- Viewer/commenter permission enforcement using `omulyar.work@gmail.com` with reduced access level.
+- Invite sent to `lena.m.coaching@gmail.com` → accept as new/existing user.
+- Revoked collaborator loses access (once UI confirmed in exploration).
 
 ## Auth notes
 
-- Sign-in path: Microsoft → `leka.mulyar@gmail.com` → passkey (Touch ID on Mac).
-- Do not store credentials, passkeys, or session tokens in this repo.
-- Playwright cannot complete passkey auth unattended; use saved storage state after manual login, or human-in-the-loop for exploration.
+- Primary owner: Microsoft → `leka.mulyar@gmail.com` → passkey (Touch ID on Mac). Not Playwright-automatable unattended.
+- Collaborator: `omulyar.work@gmail.com` — credentials managed by QA Lead out-of-band only.
+- Do not store passwords, passkeys, or session tokens in this repo or git history.
 
 ## Constraints
 
-- No confidential research, unpublished papers, or personal data in fixtures.
-- Collaborator invites only to approved test addresses.
-- Upload and collaboration tests in production blocked until Q-003 answered (R-001).
+- Invites and test emails: **allowlist only** (three addresses above).
+- Uploads: mock/synthetic data only in production (D-003).
+- Never use confidential research or invite real colleagues outside the allowlist.

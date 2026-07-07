@@ -25,12 +25,12 @@ Questions awaiting a human answer. `qa:review` aggregates these into `open-items
 
 ### Q-003: What privacy/security sign-off exists for upload and collaboration tests?
 
-- Status: open
+- Status: answered
 - Blocking: yes
 - Raised by: agent
 - Date: 2026-07-07
 - Why it matters: R-001 is a no-go risk; do not exercise uploads with any real data before sign-off.
-- Answer:
+- Answer: QA Lead approved (2026-07-07): (1) synthetic/mock/generated fixtures OK for exploratory upload and generation tests in production; (2) collaborator invites OK to approved addresses only — `lena.m.coaching@gmail.com` (not yet registered at postdocs, for invite-acceptance flow) and `omulyar.work@gmail.com` (registered at postdocs, for collaboration); (3) no other scope boundaries yet; all test emails must stay within the three approved addresses (`leka.mulyar@gmail.com`, `lena.m.coaching@gmail.com`, `omulyar.work@gmail.com`). Credentials managed out-of-band — never in repo.
 
 ### Q-004: Is there a product mock mode for AI generation, SSO, email, and document parsing?
 

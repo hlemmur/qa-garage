@@ -55,7 +55,8 @@ Black-box: the target's implementation is not directly observable. Recorded at t
 
 - Target under test: production app at https://app.postdocs.ai/ — approved for exploratory testing (D-001). No staging available.
 - Access model: institutional partnerships; access via research office or product contact (timothy@postdocs.ai).
-- Approved test account: Microsoft sign-in `leka.mulyar@gmail.com` (D-002). Passkey/Touch ID — human-in-the-loop required for auth; not Playwright-automatable yet.
+- Approved test accounts: see `test-data.md` allowlist (D-002, D-003). Primary owner `leka.mulyar@gmail.com` (passkey); collaborators `omulyar.work@gmail.com`, `lena.m.coaching@gmail.com`.
+- Upload/collaboration in production: approved with synthetic mock data only; invites restricted to allowlist (D-003).
 - Mock vs real integrations: product mock mode for AI generation, SSO, email, and document parsing is unknown (Q-004).
 
 ## Quality Goals
@@ -71,7 +72,7 @@ Product and delivery risk. Full scored matrix in risk-matrix.md.
 
 | Area | Risk Level | Business Impact | Notes |
 |------|-----------|-----------------|-------|
-| Data privacy of uploads | Critical | Confidential research/personal data exposure; trust and compliance | Use mock files only until privacy validated with product/security |
+| Data privacy of uploads | Critical | Confidential research/personal data exposure; trust and compliance | Mock/synthetic fixtures only — approved for production exploratory (D-003) |
 | Template / limit accuracy | Critical | Wrong template or limits can invalidate a real grant application | Validate selected templates and character/word limits vs authoritative funder source |
 | Grant database freshness | High | Users rely on status/eligibility for real deadlines | Validate visible source/refresh and discrepancy behavior |
 | Export fidelity (.docx) | High | Lost structure breaks funder-portal submission | Validate exported content and formatting against approved scenarios |
