@@ -16,7 +16,7 @@ AI may:
 - Reproduce suspected defects.
 - Draft bug reports, test cases, and regression candidates.
 - Classify failures and summarize evidence.
-- Recommend product, test, and harness improvements.
+- Recommend product, test, and garage improvements.
 
 AI must not automatically:
 

@@ -9,3 +9,11 @@ targets:
     notes:
       - Replace with a staging or production URL for real black-box QA.
       - Keep secrets in environment variables or untracked local config.
+  postdocs-ai:
+    name: postdocs.ai
+    project: postdocs-ai
+    environment: production
+    targetUrl: "data:text/html,<title>postdocs.ai QA placeholder</title><h1>OK</h1>"
+    notes:
+      - Replace with https://app.postdocs.ai/ once test accounts and QA Lead approval exist.
+      - Public docs at https://learn.postdocs.ai/ for discovery only.
