@@ -6,7 +6,7 @@ Cursor can use this harness directly in this repository or as an adapter copied 
 
 The active rules live in:
 
-- `.cursor/rules/qa-harness.mdc`
+- `.cursor/rules/qa-garage.mdc`
 - `.cursor/rules/playwright.mdc`
 
 Cursor agents should read the core files before QA work:
@@ -21,7 +21,7 @@ Copy the adapter rules into the target project:
 
 ```bash
 mkdir -p .cursor/rules
-cp path/to/qa-harness/adapters/cursor/*.mdc .cursor/rules/
+cp path/to/qa-garage/adapters/cursor/*.mdc .cursor/rules/
 ```
 
 If the harness remains external, update paths in the copied rules so they point back to the harness checkout.

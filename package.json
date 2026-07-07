@@ -1,8 +1,8 @@
 {
-  "name": "qa-harness",
+  "name": "qa-garage",
   "version": "0.1.0",
   "private": true,
-  "description": "Portable AI-native QA harness with Playwright as the deterministic source of truth.",
+  "description": "Portable AI-native QA garage with Playwright as the deterministic source of truth.",
   "type": "commonjs",
   "scripts": {
     "qa:smoke": "playwright test --grep @smoke",
