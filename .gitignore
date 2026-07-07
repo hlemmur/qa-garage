@@ -18,3 +18,5 @@ projects/**/evidence/sessions/*
 !projects/**/evidence/**/.gitkeep
 
 .DS_Store
+
+.temp-resources/
