@@ -11,6 +11,7 @@ Single source of truth for this project. Every vendored skill reads this file fi
   - Staging: [url]
   - Development: [url or N/A]
 - **Key User Flows:** [5-10 specific, testable flows. "If this breaks we get paged." These drive coverage priority. Detailed maps live in `journeys/`.]
+- **AI Features (if applicable):** [list AI-powered capabilities; e.g. generation, classification, search. Mark core vs auxiliary. Drives `ai-system-testing` and `reference/testability.md`.]
 
 ## Tech Stack
 Black-box: record what is known or observed about the target, not this repo's stack.

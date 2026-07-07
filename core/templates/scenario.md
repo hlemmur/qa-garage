@@ -1,16 +1,22 @@
 # Scenario
 
+Lightweight scenario outline. For full test specs with negative cases, AI checks, and ID traceability, use `core/templates/scenario-spec.md`.
+
 ## Name
 
 Human-readable scenario name.
 
 ## Tags
 
-`@smoke` `@regression` `@exploratory` `@visual`
+`@smoke` `@regression` `@exploratory` `@visual` `@ai-eval`
 
 ## Purpose
 
 What user risk this scenario protects.
+
+## Links
+
+Reference IDs: F-, UC-, R- (from `reference/`).
 
 ## Persona
 
@@ -31,6 +37,12 @@ Target environment, data, feature flags, or account setup.
 - Observable outcome:
 - Evidence to collect:
 
+## Negative Cases
+
+- Invalid input:
+- Permission denied:
+- Empty / error recovery:
+
 ## Exploratory Variants
 
 - Data variation:
@@ -44,4 +56,4 @@ Stable selectors, fixtures, or setup requirements for future Playwright tests.
 
 ## Review Notes
 
-Expected behavior owner and approval date.
+Expected behavior owner and approval date. Use `scenario-spec.md` template before Playwright promotion.

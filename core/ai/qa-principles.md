@@ -1,6 +1,6 @@
 # QA Principles
 
-This QA Garage exists to let a professional QA engineer operate as QA Lead and Test Architect while AI agents accelerate execution under supervision. QA craft lives in vendored skills under `.agents/skills/`; the thin QA Garage harness layerkeeps the human in control.
+This QA Garage exists to let a professional QA engineer operate as QA Lead and Test Architect while AI agents accelerate execution under supervision. QA craft lives in vendored skills under `.agents/skills/`; the thin QA Garage harness layer keeps the human in control.
 
 ## Source Of Truth
 
@@ -49,3 +49,9 @@ Prefer small, composable workflows over a large framework. Add structure when it
 Use Playwright for confirmed regressions, smoke checks, and release gates. Use AI-led exploration for discovery, not as a replacement for deterministic tests.
 
 Regression tests should describe observable behavior through the browser. Avoid coupling tests to implementation details unless the target project explicitly exposes a supported testing API.
+
+## Test Design
+
+Complete coverage requires happy paths and key negative flows. See `core/ai/test-design-principles.md`.
+
+Products with AI-generated output need a separate assertion posture (completion, property, eval) from Phase 1 when AI is core value. See `reference/testability.md` and vendored `ai-system-testing`.
