@@ -52,24 +52,33 @@ Run exploratory testing with browser automation, capture evidence, and classify 
 `;
 }
 
-function renderJobStub(charter: string, sessionRelPath: string): string {
-  const ts = formatTimestamp();
-  return `# JOB-${ts}: Explore charter
+function renderJobStub(charter: string, sessionRelPath: string, jobId: string): string {
+  const templatePath = path.join(process.cwd(), 'core', 'templates', 'job.md');
+
+  if (existsSync(templatePath)) {
+    return readFileSync(templatePath, 'utf8')
+      .replace('JOB-001', jobId)
+      .replace('[short job title]', `Explore: ${charter.slice(0, 60)}`)
+      .replace('proposed | approved | scheduled | running | done | skipped', 'proposed')
+      .replace('smoke | regression | explore-charter | reference-hygiene | review-open-items | report | ai-eval | doc-watch', 'explore-charter')
+      .replace('one-shot | daily | weekly | [cron expression when CI wired]', 'one-shot')
+      .replace('agent | human', 'agent')
+      .replace('[human, date]', '')
+      .replace('soft | execution', 'soft')
+      .replace('[what to run, e.g. explore charter text or `npm run qa:smoke`]', charter)
+      .replace('[harness or vendored skills to use]', 'exploratory-testing, agentic-browser-testing')
+      .replace('[R-001, journey name, …]', '')
+      .replace('- Session log:', `- Session log: ${sessionRelPath}`)
+      .replace('[Summary when done; link artifacts.]', '')
+      .replace('[Blockers, skip reason, follow-up jobs.]', `Scaffolded by npm run qa:discover. Approve before scheduling.`);
+  }
+
+  return `# ${jobId}: Explore charter
 
 - Status: proposed
 - Type: explore-charter
-- Cadence: one-shot
-- Proposed by: agent
-- Approved by:
 - Charter: ${charter}
-- Skills: exploratory-testing, agentic-browser-testing
-- Gate: soft
 - Session log: ${sessionRelPath}
-- Outcome:
-
-## Notes
-
-Scaffolded by \`npm run qa:discover\`. Approve in this file or \`cadence.md\` before scheduling.
 `;
 }
 
@@ -77,6 +86,7 @@ function main(): void {
   const config = loadRuntimeConfig();
   const charter = process.argv.slice(2).join(' ') || 'General exploratory session';
   const timestamp = formatTimestamp();
+  const jobId = `JOB-${timestamp}`;
 
   const sessionsDir = path.join(config.projectDir, 'evidence', 'sessions');
   mkdirSync(sessionsDir, { recursive: true });
@@ -93,7 +103,7 @@ function main(): void {
 
   const jobFilename = `${timestamp}-explore.md`;
   const jobPath = path.join(jobsDir, jobFilename);
-  writeFileSync(jobPath, renderJobStub(charter, sessionRelPath));
+  writeFileSync(jobPath, renderJobStub(charter, sessionRelPath, jobId));
   console.log(`Job stub written to ${path.relative(config.rootDir, jobPath)}`);
 }
 

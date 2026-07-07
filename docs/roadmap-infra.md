@@ -44,10 +44,14 @@ flowchart TD
 
 ## Phase 2 — CI Cron
 
-- `.github/workflows/qa-smoke.yml`: daily cron, `QA_PROJECT=<p> npm run qa:smoke`, upload Playwright report + traces.
-- `.github/workflows/qa-regression.yml`: weekly or on-demand, `@regression` grep.
+Cron workflows execute **approved** job types from `projects/<p>/cadence.md` and `jobs/_catalog.md`. See `core/ai/qa-cadence.md` for the harness contract.
+
+- `.github/workflows/qa-smoke.yml`: daily cron when `smoke` enabled in `cadence.md`; `QA_PROJECT=<p> npm run qa:smoke`, upload Playwright report + traces.
+- `.github/workflows/qa-regression.yml`: weekly when `regression` enabled; `@regression` grep.
+- Optional: `review-open-items` job runs `qa:review` and commits `open-items.md` summary.
 - Secrets: `TARGET_URL`, test account credentials (GitHub Actions secrets), optional `MOCK_MODE`.
 - Fail the workflow on red smoke; post summary to workflow run (and optionally open/update a GitHub Issue).
+- **Executor hat only** — no knowledge promotion or assertion changes in CI without human approval path.
 
 ## Phase 3 — Notifications
 
@@ -62,7 +66,7 @@ flowchart TD
 
 ## Separation: QA Garage vs Project Artifacts
 
-- **In git (durable, light):** `core/`, `.agents/skills/`, scripts, `projects/<p>/.agents/qa-project-context.md`, strategy/plan/risk/journeys, scenarios, tests, `reports/*.md`, decisions/questions.
+- **In git (durable, light):** `core/`, `.agents/skills/`, scripts, `projects/<p>/.agents/qa-project-context.md`, `reference/`, strategy/plan/risk/journeys, scenarios, proposals, jobs/cadence, tests, `reports/*.md`, decisions/questions.
 - **Outside git (volatile, heavy):** traces, screenshots, videos, large HTML reports → CI artifacts or object storage, linked from Markdown.
 - **Future:** extract qa-garage to its own repo (submodule/package) when testing multiple products; keep `core/` separable now.
 

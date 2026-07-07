@@ -19,6 +19,15 @@ Each project should keep one lightweight task ledger:
 projects/<project>/tasks/qa-tasks.md
 ```
 
+Scheduled routine work uses a separate jobs ledger:
+
+```text
+projects/<project>/jobs/*.md
+projects/<project>/cadence.md
+```
+
+See `core/ai/qa-cadence.md`. **Tasks** are larger units (discovery, migration, proposal). **Jobs** are scheduled or one-shot instances (daily smoke, weekly charter).
+
 ## Task Status
 
 Use one status:
@@ -96,7 +105,9 @@ AI must not:
 ## Relationship To Other QA Garage Layers
 
 - Project context (`.agents/qa-project-context.md`): what we know.
+- Reference (`reference/`): structured product facts.
 - Scenario library: what we intend to test.
 - Task ledger: what agents were asked to do and what happened.
+- Jobs (`jobs/`, `cadence.md`): scheduled and approved routine work.
 - Reports and evidence: what was observed.
 - Playwright tests: deterministic automation truth.
