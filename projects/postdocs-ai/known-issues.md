@@ -19,4 +19,4 @@ Confirmed or suspected product issues found during QA, with evidence. Distinct f
 - Expected: Closed or Forthcoming status for past-deadline calls, or removal from Open filter.
 - Actual: Calls listed as Open with expired deadlines (observed).
 - Evidence: `evidence/sessions/2026-07-07T17-06-18-525Z-session-log.md`, `evidence/discovery/2026-07-07-app-report.md`
-- Notes: Docs FAQ says EU expansion is upcoming — contradicts presence of EU calls. Needs product confirmation before filing external bug.
+- Notes: Docs FAQ says EU expansion is upcoming — contradicts presence of EU calls. Kept as suspected per D-006; included in client scope proposal for product review. Do not file external bug until confirmed unknown.

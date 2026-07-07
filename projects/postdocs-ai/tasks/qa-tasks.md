@@ -216,3 +216,43 @@ Phase 0B complete. Confirmed nav shell, Supabase auth, grants/proposals lists, p
 - Status: pending
 - Reviewer:
 - Notes: Approve smoke scenario (Q-005), fixture grant (Q-006), and KI-001 disposition.
+
+### TASK-006: Phase 0C Deep Exploration + Test Proposals
+
+- Status: done
+- Type: discovery, test-design
+- Requested by: QA Lead
+- Assigned agent/tool: Claude in Cursor
+- Created: 2026-07-07
+- Updated: 2026-07-07
+
+#### Goal
+
+Deep exploratory session; draft smoke proposal, regression proposal, complex flows, and autumn readiness strategy per D-004/D-007.
+
+#### Acceptance Criteria
+
+- [x] Phase 0C session log with findings.
+- [x] `reference/ui-inventory.md` created.
+- [x] `scenarios/smoke-proposal.md` v1 approved (D-004).
+- [x] `scenarios/regression-proposal.md` v1 drafted.
+- [x] Complex flows + maintenance strategy documented.
+- [x] Client scope proposal drafted.
+- [x] `strategy.md`, `plan.md`, `cadence.md` updated.
+
+#### Links
+
+- Report: `evidence/discovery/2026-07-07-deep-explore-report.md`
+- Smoke: `scenarios/smoke-proposal.md`
+- Regression: `scenarios/regression-proposal.md`
+- Client: `proposals/testing-scope-2026-07-07.md`
+
+#### Outcome
+
+All D-004 smoke touchpoints validated except chatbot (manual follow-up). Test design artifacts ready for Playwright phase.
+
+#### Human Review
+
+- Required: yes
+- Status: pending
+- Notes: Approve regression P0; client proposal send; storageState auth for automation.

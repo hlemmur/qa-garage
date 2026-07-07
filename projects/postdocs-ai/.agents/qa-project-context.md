@@ -8,6 +8,7 @@ Single source of truth for postdocs-ai. Black-box target: facts are sourced from
 - Type: AI-assisted grant-discovery and research-proposal drafting web app (SPA).
 - Description: Helps researchers find grant calls and draft research proposals in the relevant grant-call template using AI-assisted generation, review, eligibility checks, and export.
 - Primary audience: experienced principal investigators applying for national research grants in Sweden (EU expansion mentioned in FAQ). Source: docs, confirmed.
+- **Scale (QA Lead, 2026-07-07):** ~300 registered users, ~50 active; 1000+ new users expected by autumn via contract onboarding. Users typically active 3–4 weeks/year during grant application season. Drives smoke/regression priority and pre-autumn cadence (see `strategy.md`, `cadence.md`).
 - URLs:
   - Production app: https://app.postdocs.ai/
   - Documentation: https://learn.postdocs.ai/
@@ -61,9 +62,9 @@ Black-box: the target's implementation is not directly observable. Recorded at t
 
 ## Quality Goals
 
-- Coverage first: authenticated smoke (post-auth `/home` with Grants/Proposals nav — proposed Q-005) then create-and-generate-proposal journey using Vinnova fixture grant.
-- Flakiness threshold: under 2 percent for deterministic suites (AI-output and collaboration checks excluded from flake tracking).
-- Suite duration budget: smoke under 5 minutes.
+- Coverage first: approved smoke v1 (D-004) — dashboard tour + minimal create/export + AI Collaborator completion; then P0 regression per `scenarios/regression-proposal.md`.
+- Flakiness threshold: under 2 percent for deterministic suites (`@ai-smoke` and collaboration concurrency excluded).
+- Suite duration budget: smoke under 15 minutes (expanded scope D-004); P0 regression under 30 minutes target.
 - Key metrics: zero broken critical journeys; AI-generation workflow completes and returns output; no data-privacy regression in upload/collaboration flows.
 
 ## Risk Areas

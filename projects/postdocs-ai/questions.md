@@ -43,23 +43,23 @@ Questions awaiting a human answer. `qa:review` aggregates these into `open-items
 
 ### Q-005: What should the first smoke test assert beyond successful authentication?
 
-- Status: open
+- Status: answered
 - Blocking: no
 - Raised by: agent
 - Date: 2026-07-07
 - Why it matters: defines the smoke success criterion (which landing page/element).
 - Proposed answer / options: After human-assisted Microsoft auth, assert (1) URL is `/home`, (2) sidebar links **Grants** and **Proposals** are visible, (3) user display name visible. Does not exercise AI or uploads. Source: Phase 0B app report.
-- Answer:
+- Answer: QA Lead approved expanded smoke scope (2026-07-07): (1) user successfully authenticated, (2) dashboard `/home` shows grants summary, profile card, recent proposals; **Create proposal** active and opens grant-picker modal, **Explore** on grants card navigates to `/grants`, profile **Edit** opens user profile, left sidebar Home/Grants/Proposals all clickable, bottom-left Learn/Notifications/username all open expected surfaces, support chatbot button opens chat, (3) minimal primary journey: create proposal → search grant → export; AI Collaborator smoke: sends prompt and receives response (completion-level, not quality). See `scenarios/smoke-proposal.md` v1.
 
 ### Q-006: Which fixture materials are approved for upload and generation tests?
 
-- Status: open
+- Status: answered
 - Blocking: no
 - Raised by: agent
 - Date: 2026-07-07
 - Why it matters: uploads must use non-sensitive mock content only.
 - Proposed answer / options: Synthetic mock PDF/Word/PPT under `fixtures/` (to be created). Stable grant fixture: **Innovative startups 2026** (Vinnova). Existing proposal **Brain health 2026** available in owner workspace for read-only tours.
-- Answer:
+- Answer: QA Lead approved (2026-07-07): **Innovative startups 2026** (Vinnova) as primary grant fixture; any equivalent open grant acceptable. Synthetic mock fixtures only (D-003).
 
 ### Q-007: What upload file types, size limits, and validation errors should QA expect?
 
