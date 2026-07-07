@@ -13,6 +13,7 @@ Before QA-related work, read:
 - `core/ai/discovery-workflow.md`
 - `core/ai/knowledge-maintenance.md`
 - `core/ai/test-design-principles.md`
+- `core/ai/smoke-test-model.md`
 - `core/ai/human-decides-loop.md`
 - `core/ai/daily-qa-loop.md`
 - `core/ai/task-tracking-workflow.md`
@@ -38,6 +39,7 @@ AI must not automatically:
 - Promote observed or inferred knowledge to confirmed.
 - Mark human review as approved without approval.
 - Send client proposals without QA Lead approval.
+- Author `*.spec.ts` without approved `scenarios/smoke-proposal.md` or `scenarios/approved/*.md`.
 - Hide or relabel failures to make a run look green.
 
 ## Gates

@@ -1,3 +1,6 @@
+// Placeholder only. Generate tests from approved SMK-* cases in scenarios/smoke-proposal.md
+// after human approval in decisions.md. See core/ai/smoke-test-model.md.
+
 import { expect, test } from '@playwright/test';
 import { loadRuntimeConfig } from '../../../../scripts/utils/config';
 

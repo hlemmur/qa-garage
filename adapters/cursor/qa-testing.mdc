@@ -13,6 +13,7 @@ Read and follow:
 - `core/ai/discovery-workflow.md`
 - `core/ai/knowledge-maintenance.md`
 - `core/ai/test-design-principles.md`
+- `core/ai/smoke-test-model.md`
 - `core/ai/human-decides-loop.md`
 - `core/ai/daily-qa-loop.md`
 - `core/ai/task-tracking-workflow.md`
@@ -29,4 +30,4 @@ Honor the execution gate: `npm run qa:review -- --gate`. Answer open items per `
 
 End sessions with `knowledge-curator`. Draft client scope via `scope-proposal` skill and `npm run qa:proposal`.
 
-AI must not automatically change assertions, delete/skip tests, update baselines, redefine expected behavior, promote knowledge to confirmed, mark human review approved, send proposals externally, or hide failures.
+AI must not automatically change assertions, author `*.spec.ts` without approved smoke proposal or scenarios, delete/skip tests, update baselines, redefine expected behavior, promote knowledge to confirmed, mark human review approved, send proposals externally, or hide failures.

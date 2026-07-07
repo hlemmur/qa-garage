@@ -8,9 +8,12 @@ alwaysApply: false
 Before writing or changing Playwright tests, read:
 
 - `core/ai/qa-principles.md`
+- `core/ai/smoke-test-model.md` (smoke authoring gate)
 - The `playwright-automation` skill in `.agents/skills/playwright-automation/`
 
-Write tests against observable browser behavior. Prefer stable user-facing locators, clear setup, and targeted assertions. Assert only behavior confirmed in `.agents/qa-project-context.md`, an approved scenario, or an approved bug report.
+Write tests against observable browser behavior. Prefer stable user-facing locators, clear setup, and targeted assertions. Assert only behavior confirmed in `.agents/qa-project-context.md`, an **approved** `scenarios/smoke-proposal.md` case, an approved scenario in `scenarios/approved/`, or an approved bug report.
+
+Smoke: implement only SMK-* cases approved in `smoke-proposal.md`. `observation`-sourced cases need per-case approval before assertions.
 
 Do not weaken assertions, skip tests, delete tests, or update baselines without explicit human approval.
 

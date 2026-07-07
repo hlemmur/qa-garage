@@ -24,6 +24,7 @@ Preserve durable project understanding with clear confidence, source, evidence, 
 1. Read existing `reference/`, project context, and relevant journeys before exploration or report updates.
 2. Route facts to their owner:
    - Capabilities, use cases, surfaces, terms, testability → `reference/`
+   - Widget bundles, state logic → `reference/ui-inventory.md`
    - Journeys → `journeys/`
    - Risk → `risk-matrix.md`
    - Stack, envs, goals, team → `.agents/qa-project-context.md`

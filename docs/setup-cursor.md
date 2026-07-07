@@ -9,7 +9,7 @@ The active rules live in:
 - `.cursor/rules/qa-garage.mdc`
 - `.cursor/rules/playwright.mdc`
 
-Cursor agents should read the **Read Order** in `core/ai/qa-garage-operating-model.md` before QA work.
+Cursor agents should read the **Read Order** in `core/ai/qa-garage-operating-model.md` before QA work — including `core/ai/smoke-test-model.md` for smoke scope.
 
 QA craft lives in `.agents/skills/`. Harness wrappers in `core/skills/`.
 
@@ -25,6 +25,8 @@ cp path/to/qa-garage/adapters/cursor/*.mdc .cursor/rules/
 Use `config/mcp.playwright.json` as the canonical Playwright MCP reference.
 
 ## Daily Commands
+
+Smoke tests follow proposal-first workflow (`scenarios/smoke-proposal.md` → human approval → `tests/e2e/`). See `core/ai/smoke-test-model.md`.
 
 ```bash
 npm run qa:smoke

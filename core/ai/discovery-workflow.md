@@ -31,11 +31,12 @@ Prerequisite: read `reference/`, `journeys/`, and `risk-matrix.md` before touchi
 1. Run time-boxed charters (45–90 min each) against `TARGET_URL`.
 2. Scaffold sessions: `QA_PROJECT=<project> npm run qa:discover -- "charter description"`.
 3. Record in `evidence/sessions/<timestamp>-session-log.md`.
-4. Update `reference/` entries to `observed` with evidence paths; fill `reference/testability.md`.
-5. Propose journey refinements, new risks, and smoke candidates.
-6. Write `evidence/discovery/<date>-app-report.md`.
+4. Update `reference/` entries to `observed` with evidence paths; build or update `reference/ui-inventory.md` (widget bundles, state tags, smoke candidates).
+5. Fill `reference/testability.md`.
+6. Propose journey refinements, new risks, and smoke candidates.
+7. Write `evidence/discovery/<date>-app-report.md`.
 
-**Done when:** At least one session log exists; `testability.md` has automation notes; contradictions raised as questions.
+**Done when:** At least one session log exists; `testability.md` has automation notes; `ui-inventory.md` started; contradictions raised as questions.
 
 Blocked access is expected — record under Setup Blockers in the discovery report, not as failure.
 
@@ -45,8 +46,9 @@ Blocked access is expected — record under Setup Blockers in the discovery repo
 
 1. Compare docs vs exploration — contradictions → `questions.md`; mark old entries `outdated`.
 2. Human reviews proposed confirmations in `reference/`.
-3. Approved items → `decisions.md` and `scenarios/approved/` when ready for assertions.
-4. Regenerate `open-items.md` with `qa:review`.
+3. Draft initial `scenarios/smoke-proposal.md` (proposed only) via harness `smoke-test-design` — no Playwright.
+4. Approved items → `decisions.md` and `scenarios/approved/` when ready for assertions.
+5. Regenerate `open-items.md` with `qa:review`.
 
 **Done when:** No silent conflicts; human has reviewed high-signal proposed confirmations.
 

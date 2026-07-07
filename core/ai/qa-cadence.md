@@ -8,7 +8,7 @@ See `docs/roadmap-infra.md` for future GitHub Actions wiring.
 
 | Job type | Default cadence | Gate | Purpose |
 |----------|-----------------|------|---------|
-| `smoke` | Daily | Execution (`qa:review --gate`) | Health check via `qa:smoke` |
+| `smoke` | Daily | Execution (`qa:review --gate`) | Run **approved** SMK-* cases via `qa:smoke`; refresh `smoke-proposal.md` after exploration |
 | `regression` | Weekly | Execution | Deterministic suite via `qa:regression` |
 | `explore-charter` | Weekly (rotate risk) | Soft (discovery) | Exploratory session; update `reference/` |
 | `reference-hygiene` | Weekly | None | Reconcile docs, sessions, tests via `knowledge-curator` |

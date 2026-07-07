@@ -8,9 +8,12 @@ alwaysApply: false
 Before writing or changing Playwright tests, read:
 
 - `core/ai/qa-principles.md`
+- `core/ai/smoke-test-model.md` (smoke authoring gate)
 - The `playwright-automation` skill in `.agents/skills/playwright-automation/` (patterns, selectors, fixtures, network mocking).
 
-Use Playwright for deterministic smoke, regression, visual, and user-journey coverage. Assert only behavior that is confirmed in `projects/<project>/.agents/qa-project-context.md`, an approved scenario, or an approved bug report.
+Use Playwright for deterministic smoke, regression, visual, and user-journey coverage. Assert only behavior that is confirmed in `projects/<project>/.agents/qa-project-context.md`, an **approved** `scenarios/smoke-proposal.md` case (status `approved`), an approved scenario in `scenarios/approved/`, or an approved bug report.
+
+Smoke: implement only SMK-* cases approved in `smoke-proposal.md`. `observation`-sourced cases need per-case approval before assertions.
 
 Prefer:
 

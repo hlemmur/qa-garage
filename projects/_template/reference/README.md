@@ -25,6 +25,7 @@ Every durable row includes:
 | `product-map.md` | Surfaces, navigation, major states |
 | `glossary.md` | Canonical product terms (keep small) |
 | `testability.md` | Automation blockers, selectors, nondeterminism, data needs |
+| `ui-inventory.md` | Widget bundles, state logic, smoke candidacy (from exploration) |
 
 ## Update protocol
 

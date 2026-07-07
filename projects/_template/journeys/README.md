@@ -16,6 +16,15 @@ Tie each journey to the personas in the Product section of `.agents/qa-project-c
 
 Template for a single journey: `.agents/skills/journey-mapping/references/journey-map-template.md`.
 
+## Filename convention
+
+Use **action-oriented** names — what the user does, not an aspirational outcome.
+
+| Avoid (outcome) | Prefer (action) |
+|-----------------|-----------------|
+| `win-a-grant-with-a-drafted-proposal.md` | `create-proposal-for-a-grant.md` |
+
 ## Journeys
 
+- [ ] `create-proposal-for-a-grant.md` - [persona] creates [artifact] from [catalog/source] (harness example)
 - [ ] [journey-name].md - [persona] pursuing [goal]

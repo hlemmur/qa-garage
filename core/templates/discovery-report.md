@@ -38,7 +38,23 @@ Durable facts added or proposed during discovery. Route each to its owner artifa
 
 Document roles, permissions, and access constraints without secrets.
 
-## Initial Smoke Candidates
+## UI Inventory Updates
+
+Widget bundles and state logic for `reference/ui-inventory.md`. Link PM-* IDs from product-map.
+
+| UI ID | Widget / bundle | Expected when | Smoke candidate | Status | Evidence |
+| --- | --- | --- | --- | --- | --- |
+|  |  |  | yes / no / deferred | observed |  |
+
+## Smoke Candidates
+
+Structured smoke cases for `scenarios/smoke-proposal.md` (proposed only — no Playwright).
+
+| SMK ID (proposed) | Description | Source | UI / journey refs |
+| --- | --- | --- | --- |
+|  |  | observation / docs |  |
+
+## Initial Smoke Candidates (legacy summary)
 
 List critical journeys that should become deterministic smoke tests.
 

@@ -9,7 +9,7 @@ Before acting, read `core/ai/qa-project-context-model.md` and run the harness `k
 | Trigger | Update |
 |---------|--------|
 | Docs read / release notes | `reference/features.md`, `use-cases.md`, `product-map.md`, `glossary.md` — mark changed items `outdated` if superseded |
-| Exploratory session | `reference/product-map.md`, `features.md`, `testability.md`, `journeys/` — status `observed` + evidence path |
+| Exploratory session | `reference/product-map.md`, `reference/ui-inventory.md`, `features.md`, `testability.md`, `journeys/` — status `observed` + evidence path |
 | Playwright run (pass or fail) | `reference/testability.md` (selectors, flakiness); `features.md` if behavior differs from docs |
 | Test authoring | `testability.md`; link scenario ↔ feature/use-case IDs |
 | Bug repro | `known-issues.md`; propose `reference/` update |
@@ -21,6 +21,7 @@ Before acting, read `core/ai/qa-project-context-model.md` and run the harness `k
 | Fact type | Owner artifact |
 |-----------|----------------|
 | Capabilities, use cases, surfaces, terms | `reference/` |
+| Widget bundles, state logic, smoke candidacy | `reference/ui-inventory.md` |
 | End-to-end user story | `journeys/*.md` |
 | Product/delivery risk | `risk-matrix.md` |
 | Stack, envs, goals, team | `.agents/qa-project-context.md` |

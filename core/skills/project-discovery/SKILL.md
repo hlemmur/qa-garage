@@ -32,9 +32,10 @@ Build enough product understanding for safe exploratory work, realistic test sco
 
 1. Read existing `reference/`, `journeys/`, and `risk-matrix.md`.
 2. Run charters via `npm run qa:discover -- "charter"`; use Playwright MCP or exploratory-testing skill.
-3. Update `reference/` with `observed` facts and evidence paths; fill `reference/testability.md`.
-4. Propose journey and risk updates; list smoke candidates.
-5. Write `evidence/discovery/<date>-app-report.md`.
+3. Update `reference/` with `observed` facts and evidence paths; build or update `reference/ui-inventory.md`.
+4. Fill `reference/testability.md`.
+5. Propose journey and risk updates; list smoke candidates for `scenarios/smoke-proposal.md`.
+6. Write `evidence/discovery/<date>-app-report.md`.
 
 ## Reconcile (Phase 0C)
 
@@ -46,7 +47,7 @@ Run harness `knowledge-curator` after each pass. Resolve contradictions via `que
 - `evidence/discovery/` — discovery reports
 - `evidence/sessions/` — session logs
 - `questions.md` — unresolved items
-- Proposed updates to `journeys/`, `risk-matrix.md`, `scenarios/`
+- Proposed updates to `journeys/`, `risk-matrix.md`, `scenarios/smoke-proposal.md`
 
 ## Guardrails
 

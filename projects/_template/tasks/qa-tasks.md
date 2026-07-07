@@ -74,6 +74,7 @@ Run exploratory charters against the live app; update `reference/testability.md`
 
 - [ ] At least one session log in `evidence/sessions/`.
 - [ ] `reference/` updated with `observed` facts and evidence paths.
+- [ ] `reference/ui-inventory.md` updated with widget bundles and smoke candidates.
 - [ ] `reference/testability.md` filled with automation notes.
 - [ ] `evidence/discovery/<date>-app-report.md` written.
 - [ ] Contradictions raised in `questions.md` (not silently overwritten).
@@ -207,6 +208,52 @@ Synthesize a client-facing testing scope proposal from project artifacts for a s
 - Proposal: `proposals/`
 - Reference: `reference/`
 - Plan: `plan.md`
+- Commit:
+
+#### Progress Notes
+
+-
+
+#### Outcome
+
+Pending.
+
+#### Human Review
+
+- Required: yes
+- Status: pending
+- Reviewer:
+- Notes:
+
+### TASK-006: Draft Smoke Proposal
+
+- Status: proposed
+- Type: test design
+- Requested by: QA Lead
+- Assigned agent/tool:
+- Created:
+- Updated:
+
+#### Goal
+
+Draft source-labeled smoke scope in `scenarios/smoke-proposal.md` after Phase 0B — no Playwright until human approves.
+
+#### Acceptance Criteria
+
+- [ ] `scenarios/smoke-proposal.md` drafted from `core/templates/smoke-proposal.md`.
+- [ ] Assumptions documented (account, seed data, environment, auth).
+- [ ] Every SMK-* case has a source tier (`observation` | `docs` | `human` | `issue`).
+- [ ] Primary journey minimal path linked to `journeys/` file.
+- [ ] Out-of-smoke deferrals listed explicitly.
+- [ ] No `*.spec.ts` changes until `decisions.md` records approval.
+
+#### Links
+
+- Model: `core/ai/smoke-test-model.md`
+- Skill: `core/skills/smoke-test-design/SKILL.md`
+- Reference: `reference/ui-inventory.md`
+- Proposal: `scenarios/smoke-proposal.md`
+- Test: none (until approved)
 - Commit:
 
 #### Progress Notes

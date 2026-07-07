@@ -1,29 +1,19 @@
 # Smoke Scenario
 
-## Purpose
+Pointer to the proposal-first smoke workflow. Do not treat this file as the assertion source of truth.
 
-Confirm the target application is reachable and returns a browser-rendered page with a document title.
+## Workflow
+
+1. Draft cases in [`smoke-proposal.md`](smoke-proposal.md) using harness `smoke-test-design` skill.
+2. Human approves assumptions and `observation`-sourced cases; record in `decisions.md`.
+3. Implement **only approved** SMK-* cases in `tests/e2e/` via vendored `playwright-automation`.
+
+See `core/ai/smoke-test-model.md` for what smoke covers (auth, surfaces, nav, controls, context-aware state, primary journey minimal path).
 
 ## Tags
 
 `@smoke`
 
-## Preconditions
+## Placeholder automation
 
-- `TARGET_URL` points to the target environment.
-- Browser dependencies are installed with `npx playwright install chromium`.
-
-## Journey
-
-1. Open the target URL.
-2. Wait for the page to load.
-3. Verify the document title is not empty.
-
-## Expected Outcomes
-
-- The page loads without browser navigation failure.
-- The page has a non-empty title.
-
-## Automation
-
-Covered by `projects/_template/tests/e2e/smoke.spec.ts`.
+`tests/e2e/smoke.spec.ts` remains a minimal harness placeholder until approved cases exist. Generate spec steps from approved `smoke-proposal.md` cases only.

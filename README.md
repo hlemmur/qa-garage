@@ -49,6 +49,8 @@ QA_PROJECT=<project> npm run qa:knowledge
 
 Complete coverage requires happy paths and negative flows. AI-powered products need a separate assertion posture from Phase 1. See `core/ai/test-design-principles.md`.
 
+**Smoke** uses a proposal-first workflow: draft `scenarios/smoke-proposal.md` after Phase 0B, human approves, then author Playwright. See `core/ai/smoke-test-model.md`. Do not jump straight to `smoke.spec.ts`.
+
 ## Scope Proposals
 
 Synthesize a client-facing testing scope from project artifacts:
@@ -106,7 +108,7 @@ npm test
 ## Structure
 
 - `core/ai/`: principles, operating model, discovery, knowledge maintenance, test design, human-decides, cadence, scope proposals.
-- `core/skills/`: harness wrapper skills (project-discovery, knowledge-curator, scope-proposal, task-tracker).
+- `core/skills/`: harness wrapper skills (project-discovery, knowledge-curator, scope-proposal, smoke-test-design, task-tracker).
 - `core/templates/`: reports, scenarios, proposals, jobs, discovery.
 - `.agents/skills/`: vendored QA craft (pristine).
 - `projects/_template/`: starter project with reference layer, jobs, proposals, scenarios.
@@ -115,7 +117,7 @@ npm test
 ## First Target Setup
 
 1. Copy `projects/_template` to `projects/<project-name>`.
-2. Phase 0 discovery: TASK-001 docs → TASK-002 app → TASK-003 reconcile (`discovery-workflow.md`).
+2. Phase 0 discovery: TASK-001 docs → TASK-002 app → TASK-003 reconcile → TASK-006 smoke proposal (`discovery-workflow.md`, `smoke-test-model.md`).
 3. Run `qa-start` sequence or individual vendored skills for strategy and plan.
 4. Draft client scope: `npm run qa:proposal -- "goal"`.
 5. Configure `cadence.md` and approve jobs with the agent.

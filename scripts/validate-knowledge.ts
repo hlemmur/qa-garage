@@ -2,7 +2,7 @@ import { existsSync, readFileSync, readdirSync } from 'node:fs';
 import path from 'node:path';
 import { loadRuntimeConfig } from './utils/config';
 import { validateContext } from './lib/context';
-import { validateReferenceDir } from './lib/reference';
+import { validateReferenceDir, warnUiInventoryIfNeeded } from './lib/reference';
 
 function listProjects(rootDir: string, requestedProject: string | undefined): string[] {
   if (requestedProject) {
@@ -21,16 +21,17 @@ function listProjects(rootDir: string, requestedProject: string | undefined): st
     .sort();
 }
 
-function validateProject(rootDir: string, project: string): string[] {
+function validateProject(rootDir: string, project: string): { errors: string[]; warnings: string[] } {
   const projectDir = path.join(rootDir, 'projects', project);
   const contextPath = path.join(projectDir, '.agents', 'qa-project-context.md');
   const referenceDir = path.join(projectDir, 'reference');
 
   if (!existsSync(projectDir)) {
-    return [`Project "${project}" does not exist at ${path.relative(rootDir, projectDir)}`];
+    return { errors: [`Project "${project}" does not exist at ${path.relative(rootDir, projectDir)}`], warnings: [] };
   }
 
   const errors: string[] = [];
+  const warnings: string[] = [];
 
   if (!existsSync(contextPath)) {
     errors.push(`Project "${project}" is missing ${path.relative(rootDir, contextPath)}`);
@@ -50,9 +51,15 @@ function validateProject(rootDir: string, project: string): string[] {
         existsSync(path.join(rootDir, relPath))
       ).map((error) => `Project "${project}": ${error}`)
     );
+
+    warnings.push(
+      ...warnUiInventoryIfNeeded(project, projectDir).map(
+        (warning) => `Project "${project}": ${warning}`
+      )
+    );
   }
 
-  return errors;
+  return { errors, warnings };
 }
 
 function main(): void {
@@ -66,7 +73,16 @@ function main(): void {
     return;
   }
 
-  const errors = projects.flatMap((project) => validateProject(config.rootDir, project));
+  const results = projects.map((project) => validateProject(config.rootDir, project));
+  const errors = results.flatMap((result) => result.errors);
+  const warnings = results.flatMap((result) => result.warnings);
+
+  if (warnings.length > 0) {
+    console.warn('Context validation warnings:');
+    for (const warning of warnings) {
+      console.warn(`- ${warning}`);
+    }
+  }
 
   if (errors.length > 0) {
     console.error('Context validation failed:');

@@ -21,9 +21,9 @@
 
 Record notable actions, observations, and evidence as the session progresses.
 
-| Time | Action | Observation | Evidence |
-| --- | --- | --- | --- |
-|  |  |  |  |
+| Time | Action | Observation | Widget / state (for ui-inventory) | Evidence |
+| --- | --- | --- | --- | --- |
+|  |  |  |  |  |
 
 ## Findings
 

@@ -54,11 +54,33 @@ Record per feature in `reference/testability.md`. Human approves eval thresholds
 
 Use `ai-system-testing` for craft: prompt regression, eval frameworks, grounding, nondeterminism strategies. Harness rule: never assert exact LLM strings; use properties, schemas, or eval scores.
 
+## Smoke testing
+
+Black-box smoke definition and authoring gate: `core/ai/smoke-test-model.md`.
+
+Draft scope in `scenarios/smoke-proposal.md` via harness `smoke-test-design` — **never** author `*.spec.ts` until human approves the proposal and every `observation`-sourced case.
+
+Smoke covers auth shell, authed surfaces, navigation, controls, context-aware account state, and primary-journey minimal path — not AI quality, export fidelity, or negative matrices.
+
+## Source tiers (all automation)
+
+Every smoke case (SMK-*) and regression scenario (SCN-*) must declare a **Source**:
+
+| Source | Meaning | Gate |
+|--------|---------|------|
+| `observation` | From exploration/session | Individual human approval |
+| `docs` | From user/dev documentation | Approve if docs trusted |
+| `human` | QA Lead decision | Already approved |
+| `issue` | Known issue / bug report | Approve disposition |
+
+**No code before approval:** Playwright authoring requires approved `smoke-proposal.md` or `scenarios/approved/*.md` plus `decisions.md` entry.
+
 ## Scenario spec standard
 
 Approved scenarios use `core/templates/scenario-spec.md`:
 
-- Links to `F-`, `UC-`, `R-` IDs
+- **Source** tier on every spec
+- Links to `F-`, `UC-`, `R-`, `SMK-` IDs
 - Happy path + negative cases + oracles
 - Approval status before Playwright promotion
 
@@ -66,8 +88,8 @@ Approved scenarios use `core/templates/scenario-spec.md`:
 
 1. Read `reference/` and `risk-matrix.md`.
 2. Map highest risks to test levels (smoke, regression, exploratory, AI eval).
-3. Draft scenarios with happy + negative cases.
-4. Human approves scenarios → Playwright (`playwright-automation`).
+3. Draft smoke proposal (`smoke-test-design`) or regression scenarios with happy + negative cases.
+4. Human approves smoke proposal / scenarios → Playwright (`playwright-automation`).
 5. Update `reference/testability.md` after automation attempts.
 
 ## Guardrails

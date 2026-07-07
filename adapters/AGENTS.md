@@ -7,13 +7,18 @@ Before QA-related work, read the **Read Order** in `core/ai/qa-garage-operating-
 - `core/ai/discovery-workflow.md`
 - `core/ai/knowledge-maintenance.md`
 - `core/ai/test-design-principles.md`
+- `core/ai/smoke-test-model.md`
 - `core/ai/human-decides-loop.md`
 - `core/ai/qa-cadence.md`
 - `core/ai/scope-proposal-workflow.md`
 
 Also read the target project's `.agents/qa-project-context.md`, `reference/`, `journeys/`, `risk-matrix.md`, scenarios, `tasks/qa-tasks.md`, and `cadence.md`.
 
-Harness wrappers: `core/skills/` (project-discovery, knowledge-curator, scope-proposal, task-tracker). Vendored craft: `.agents/skills/`.
+Harness wrappers: `core/skills/` (project-discovery, knowledge-curator, scope-proposal, smoke-test-design, task-tracker). Vendored craft: `.agents/skills/`.
+
+## Smoke
+
+Draft `scenarios/smoke-proposal.md` before authoring smoke Playwright. See `core/ai/smoke-test-model.md`.
 
 ## Rules
 

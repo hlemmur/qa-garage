@@ -7,8 +7,9 @@ Testable specification linking reference IDs to observable behavior. Use for sce
 - **ID:** SCN-001
 - **Title:** [short name]
 - **Status:** proposed | approved | obsolete
+- **Source:** observation | docs | human | issue
 - **Tags:** `@smoke` `@regression` `@exploratory` `@ai-eval`
-- **Links:** F-001, UC-001, R-001
+- **Links:** F-001, UC-001, R-001, SMK-* (if from smoke proposal)
 - **Approved by:** [human, date — required before Playwright promotion]
 
 ## Goal
@@ -62,6 +63,15 @@ What user or business risk this scenario protects.
 - Selectors:
 - Fixtures:
 - Flake policy:
+
+## Source tier
+
+| Source | Meaning | Gate |
+|--------|---------|------|
+| `observation` | From exploration/session | Individual human approval required |
+| `docs` | From user/dev documentation | Approve if docs trusted |
+| `human` | QA Lead decision | Already approved |
+| `issue` | Known issue / bug report | Approve disposition |
 
 ## Review
 
