@@ -12,6 +12,14 @@
 
 List pages, workflows, and major UI areas discovered.
 
+## Reference Updates Proposed
+
+Route each row to `reference/` (features, use-cases, product-map, glossary, testability) or other owner artifacts.
+
+| ID / Artifact | Summary | Status | Source | Evidence |
+| --- | --- | --- | --- | --- |
+|  |  | observed | app exploration |  |
+
 ## Context Updates
 
 Durable facts added or proposed during discovery. Route each to its owner artifact (`.agents/qa-project-context.md` section, `journeys/`, `risk-matrix.md`, `test-data.md`).

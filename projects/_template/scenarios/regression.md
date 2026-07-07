@@ -19,8 +19,8 @@ A scenario may become a regression test only after a human approves:
 
 ## Candidate Sources
 
-- Confirmed entries in `knowledge/expected-behavior.md`.
-- Human decisions in `knowledge/decisions.md`.
+- Confirmed entries in `reference/features.md` or approved `scenarios/approved/`.
+- Human decisions in `decisions.md`.
 - Approved bug reports.
 - Approved scenario updates.
 - Repeated high-risk exploratory findings with evidence.

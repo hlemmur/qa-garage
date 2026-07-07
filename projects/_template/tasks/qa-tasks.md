@@ -13,7 +13,7 @@ This ledger tracks QA work requested for this project. Keep entries concise, lin
 
 ## Task Ledger
 
-### TASK-001: Create Initial Project Knowledge Base
+### TASK-001: Docs Discovery
 
 - Status: proposed
 - Type: knowledge, discovery
@@ -24,24 +24,108 @@ This ledger tracks QA work requested for this project. Keep entries concise, lin
 
 #### Goal
 
-Analyze available project docs and create the initial `knowledge/` files for this project.
+Analyze available user documentation and populate the initial `reference/` layer. Do not write tests.
 
 #### Acceptance Criteria
 
-- [ ] Product map updated.
-- [ ] Personas and roles captured.
-- [ ] User journeys captured.
-- [ ] Risks and questions captured.
-- [ ] Expected behavior marked only when confirmed by docs or human approval.
+- [ ] `reference/features.md`, `use-cases.md`, `product-map.md`, `glossary.md` populated from docs.
+- [ ] Draft `journeys/` and `risk-matrix.md` from docs.
+- [ ] `.agents/qa-project-context.md` Product section updated.
+- [ ] `evidence/discovery/<date>-docs-report.md` written.
+- [ ] Open questions raised in `questions.md`.
 - [ ] `QA_PROJECT=<project> npm run qa:knowledge` passes.
 
 #### Links
 
-- Knowledge: `knowledge/`
+- Reference: `reference/`
 - Scenario:
-- Evidence:
+- Evidence: `evidence/discovery/`
 - Report:
-- Test:
+- Test: none
+- Commit:
+
+#### Progress Notes
+
+-
+
+#### Outcome
+
+Pending.
+
+#### Human Review
+
+- Required: yes
+- Status: pending
+- Reviewer:
+- Notes:
+
+### TASK-002: App Discovery
+
+- Status: proposed
+- Type: discovery
+- Requested by: QA Lead
+- Assigned agent/tool:
+- Created:
+- Updated:
+
+#### Goal
+
+Run exploratory charters against the live app; update `reference/testability.md` and validate docs-sourced facts.
+
+#### Acceptance Criteria
+
+- [ ] At least one session log in `evidence/sessions/`.
+- [ ] `reference/` updated with `observed` facts and evidence paths.
+- [ ] `reference/testability.md` filled with automation notes.
+- [ ] `evidence/discovery/<date>-app-report.md` written.
+- [ ] Contradictions raised in `questions.md` (not silently overwritten).
+
+#### Links
+
+- Reference: `reference/`
+- Evidence: `evidence/sessions/`
+- Report: `evidence/discovery/`
+- Test: none
+- Commit:
+
+#### Progress Notes
+
+-
+
+#### Outcome
+
+Pending.
+
+#### Human Review
+
+- Required: yes
+- Status: pending
+- Reviewer:
+- Notes:
+
+### TASK-003: Reconcile Sources
+
+- Status: proposed
+- Type: knowledge, maintenance
+- Requested by: QA Lead
+- Assigned agent/tool:
+- Created:
+- Updated:
+
+#### Goal
+
+Reconcile docs vs exploration via `knowledge-curator`; human reviews proposed confirmations.
+
+#### Acceptance Criteria
+
+- [ ] No silent conflicts between docs and app evidence.
+- [ ] Proposed confirmations listed; human decisions recorded in `decisions.md` where approved.
+- [ ] `npm run qa:review` regenerated `open-items.md`.
+
+#### Links
+
+- Reference: `reference/`
+- Decisions: `decisions.md`
 - Commit:
 
 #### Progress Notes

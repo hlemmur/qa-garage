@@ -12,6 +12,7 @@
     "qa:codegen": "playwright codegen",
     "qa:report": "ts-node scripts/generate-report.ts",
     "qa:explore": "ts-node scripts/explore.ts",
+    "qa:discover": "ts-node scripts/explore.ts",
     "qa:knowledge": "ts-node scripts/validate-knowledge.ts",
     "qa:review": "ts-node scripts/review.ts",
     "qa:tasks": "ts-node scripts/validate-tasks.ts",

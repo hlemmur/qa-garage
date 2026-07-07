@@ -2,6 +2,7 @@ import { existsSync, readFileSync, readdirSync } from 'node:fs';
 import path from 'node:path';
 import { loadRuntimeConfig } from './utils/config';
 import { validateContext } from './lib/context';
+import { validateReferenceDir } from './lib/reference';
 
 function listProjects(rootDir: string, requestedProject: string | undefined): string[] {
   if (requestedProject) {
@@ -23,22 +24,35 @@ function listProjects(rootDir: string, requestedProject: string | undefined): st
 function validateProject(rootDir: string, project: string): string[] {
   const projectDir = path.join(rootDir, 'projects', project);
   const contextPath = path.join(projectDir, '.agents', 'qa-project-context.md');
+  const referenceDir = path.join(projectDir, 'reference');
 
   if (!existsSync(projectDir)) {
     return [`Project "${project}" does not exist at ${path.relative(rootDir, projectDir)}`];
   }
 
+  const errors: string[] = [];
+
   if (!existsSync(contextPath)) {
-    return [`Project "${project}" is missing ${path.relative(rootDir, contextPath)}`];
+    errors.push(`Project "${project}" is missing ${path.relative(rootDir, contextPath)}`);
+  } else {
+    const allowPlaceholders = project === '_template';
+    const markdown = readFileSync(contextPath, 'utf8');
+    errors.push(
+      ...validateContext(markdown, { allowPlaceholders }).map(
+        (error) => `Project "${project}": ${error}`
+      )
+    );
   }
 
-  // Templates are allowed to keep [placeholders]; real projects must fill them.
-  const allowPlaceholders = project === '_template';
-  const markdown = readFileSync(contextPath, 'utf8');
+  if (project === '_template' || existsSync(referenceDir)) {
+    errors.push(
+      ...validateReferenceDir(path.relative(rootDir, referenceDir), (relPath) =>
+        existsSync(path.join(rootDir, relPath))
+      ).map((error) => `Project "${project}": ${error}`)
+    );
+  }
 
-  return validateContext(markdown, { allowPlaceholders }).map(
-    (error) => `Project "${project}": ${error}`
-  );
+  return errors;
 }
 
 function main(): void {

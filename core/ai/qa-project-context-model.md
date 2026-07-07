@@ -17,9 +17,13 @@ Each concern has exactly one owner - this is what prevents the journeys-vs-featu
 | `strategy.md` | `test-strategy` | How the project approaches quality; phasing |
 | `plan.md` | `test-planning` | Current-phase coverage map |
 | `test-data.md` | `test-data-management` | Accounts/data matrix (concurrency, permissions, invitations) |
+| `reference/` | `project-discovery`, `knowledge-curator` | Features, use cases, product map, glossary, testability (inline provenance) |
+| `scenarios/` | harness + `playwright-automation` | Testable specs; approved scenarios become assertion ground truth |
+| `proposals/` | `scope-proposal` | Client-facing scope documents synthesized from project artifacts |
+| `jobs/`, `cadence.md` | harness `qa-cadence` | Scheduled job instances and per-project cadence overrides |
 | `.agents/qa-project-context.md` | `qa-project-context` | Everything else (product, stack, integrations, environments, goals, team, conventions) |
 
-Expected behavior is expressed through `strategy.md`, `plan.md`, approved scenarios, and confirmed entries in `qa-project-context.md` - never in a separate overlapping file.
+Expected behavior is expressed through `strategy.md`, `plan.md`, approved scenarios, confirmed entries in `reference/`, and confirmed entries in `qa-project-context.md` - never in a separate overlapping file.
 
 ## Status & Provenance
 
@@ -52,4 +56,4 @@ When new evidence conflicts with an existing entry, do not overwrite it. Record 
 
 ## Validation
 
-`QA_PROJECT=<project> npm run qa:knowledge` checks that `.agents/qa-project-context.md` exists, contains the nine required sections, and (for real projects) has no unfilled `[placeholders]`.
+`QA_PROJECT=<project> npm run qa:knowledge` checks that `.agents/qa-project-context.md` exists, contains the nine required sections, (for real projects) has no unfilled `[placeholders]`, and that `reference/` contains the five required files (`features.md`, `use-cases.md`, `product-map.md`, `glossary.md`, `testability.md`).

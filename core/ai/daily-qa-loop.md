@@ -5,6 +5,7 @@ Use this loop for regular supervised QA sessions. It sits on top of the vendored
 ## Inputs
 
 - `projects/<project>/.agents/qa-project-context.md`.
+- `reference/` (features, use cases, product map, testability).
 - Current `plan.md`, relevant `journeys/`, and `risk-matrix.md`.
 - Target environment and URL.
 - Scenario files.
@@ -25,7 +26,8 @@ Use this loop for regular supervised QA sessions. It sits on top of the vendored
 10. Record issues in `known-issues.md` and open questions in `questions.md` with source and evidence.
 11. Draft bug reports for confirmed issues; suggest regression tests for approved ones.
 12. Update confirmed expectations, `qa-project-context.md`, and scenarios only after human review.
-13. Regenerate `open-items.md` (`npm run qa:review`) and end with an ACTION REQUIRED summary if anything awaits a human.
+13. Run harness `knowledge-curator` — propose `reference/` and related artifact updates (mandatory; see `knowledge-maintenance.md`).
+14. Regenerate `open-items.md` (`npm run qa:review`) and end with an ACTION REQUIRED summary if anything awaits a human.
 
 ## Output
 
