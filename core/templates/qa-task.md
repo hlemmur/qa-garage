@@ -17,12 +17,13 @@ State the outcome the task should produce.
 
 - [ ] Clear expected output.
 - [ ] Relevant artifacts linked.
+- [ ] `reference/` updated or explicitly N/A with reason.
 - [ ] Verification recorded.
 - [ ] Human review status recorded.
 
 ## Links
 
-- Knowledge:
+- Reference: `reference/`
 - Scenario:
 - Evidence:
 - Report:

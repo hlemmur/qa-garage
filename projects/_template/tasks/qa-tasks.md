@@ -38,9 +38,7 @@ Analyze available user documentation and populate the initial `reference/` layer
 #### Links
 
 - Reference: `reference/`
-- Scenario:
 - Evidence: `evidence/discovery/`
-- Report:
 - Test: none
 - Commit:
 
@@ -126,6 +124,89 @@ Reconcile docs vs exploration via `knowledge-curator`; human reviews proposed co
 
 - Reference: `reference/`
 - Decisions: `decisions.md`
+- Commit:
+
+#### Progress Notes
+
+-
+
+#### Outcome
+
+Pending.
+
+#### Human Review
+
+- Required: yes
+- Status: pending
+- Reviewer:
+- Notes:
+
+### TASK-004: Reference Maintenance (recurring)
+
+- Status: proposed
+- Type: knowledge, maintenance
+- Requested by: QA Lead
+- Assigned agent/tool:
+- Created:
+- Updated:
+
+#### Goal
+
+Reconcile `reference/` with latest docs, session logs, and test results via `knowledge-curator`.
+
+#### Acceptance Criteria
+
+- [ ] Stale entries marked `outdated` where evidence conflicts.
+- [ ] New facts added with status, inline source, and evidence.
+- [ ] Contradictions raised in `questions.md`.
+- [ ] `npm run qa:knowledge` passes.
+
+#### Links
+
+- Reference: `reference/`
+- Evidence: `evidence/sessions/`
+- Commit:
+
+#### Progress Notes
+
+-
+
+#### Outcome
+
+Pending.
+
+#### Human Review
+
+- Required: no
+- Status: not required
+- Reviewer:
+- Notes:
+
+### TASK-005: Draft Client Scope Proposal
+
+- Status: proposed
+- Type: knowledge, reporting
+- Requested by: QA Lead
+- Assigned agent/tool:
+- Created:
+- Updated:
+
+#### Goal
+
+Synthesize a client-facing testing scope proposal from project artifacts for a stated engagement goal.
+
+#### Acceptance Criteria
+
+- [ ] `npm run qa:proposal -- "<goal>"` scaffold created or updated.
+- [ ] All sections filled from `reference/`, `risk-matrix.md`, `plan.md`, `questions.md`.
+- [ ] Every in-scope row traceable to ID; blockers framed as client dependencies.
+- [ ] Human approval recorded in `decisions.md` before external send.
+
+#### Links
+
+- Proposal: `proposals/`
+- Reference: `reference/`
+- Plan: `plan.md`
 - Commit:
 
 #### Progress Notes

@@ -2,23 +2,18 @@
 
 Use the portable QA Garage in this repository: a thin harness layer over vendored QA skills in `.agents/skills/`.
 
-Before QA work, read:
+Before QA work, read the **Read Order** in `core/ai/qa-garage-operating-model.md` and the target project's `.agents/qa-project-context.md`, `reference/`, and `tasks/qa-tasks.md`.
 
-- `core/ai/qa-principles.md`
-- `core/ai/qa-garage-operating-model.md`
-- `core/ai/qa-project-context-model.md`
-- `core/ai/daily-qa-loop.md`
-- `core/ai/task-tracking-workflow.md`
-- The target project's `.agents/qa-project-context.md` and `tasks/qa-tasks.md`
+Harness wrappers in `core/skills/`; vendored craft in `.agents/skills/`.
 
-Use the vendored skills for craft (context, risk, journeys, strategy, exploration, repro, Playwright authoring, reporting). The skill-routing table is in `core/ai/qa-garage-operating-model.md`.
+Each target project is its own QA root. Targets are black-box.
 
-Each target project is its own QA root at `projects/<project>/` with a single source of truth at `.agents/qa-project-context.md`. Targets are black-box.
+End every session with `knowledge-curator`. Answer open items per `human-decides-loop.md`.
 
-Do not treat exploratory observations as confirmed bugs without evidence.
+Discovery gate is soft; execution gate via `npm run qa:review -- --gate`.
 
-Honor the readiness gate (`npm run qa:review -- --gate`): do not start execution work while blocking items remain unless `decisions.md` sets an override.
+Do not change assertions, promote knowledge to confirmed, send client proposals, or mark human review approved without explicit human approval.
 
-Do not change assertions, delete/skip tests, update visual baselines, redefine expected behavior, promote observed/inferred knowledge to confirmed, or mark human review approved unless the human explicitly approves that testing-intent change.
+Prefer Playwright for deterministic regression; AI-assisted exploration for discovery.
 
-Prefer Playwright for deterministic regression coverage and use AI-assisted exploration for discovery.
+Commands: `qa:knowledge`, `qa:review`, `qa:discover`, `qa:proposal`, `qa:smoke`, `qa:regression`, `qa:report`.

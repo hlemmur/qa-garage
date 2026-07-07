@@ -4,27 +4,27 @@ Claude Code should use this QA Garage through a thin project memory file that po
 
 ## Adapter
 
-Copy or reference:
-
-- `adapters/CLAUDE.md`
-
-For a target project, place it where Claude Code expects project memory, then adjust paths if the garage is external.
+Copy or reference `adapters/CLAUDE.md`.
 
 ## Required Reading
 
-Claude should read before QA work:
-
-- `core/ai/qa-principles.md`
-- `core/ai/qa-garage-operating-model.md`
-- `core/ai/qa-project-context-model.md`
-- `core/ai/daily-qa-loop.md`
-
-QA craft lives in the vendored skills under `.agents/skills/`; the skill-routing table is in `core/ai/qa-garage-operating-model.md`.
+Read the **Read Order** in `core/ai/qa-garage-operating-model.md`, including discovery, knowledge maintenance, test design, human-decides, cadence, and scope proposal workflows.
 
 ## MCP
 
-Use `config/mcp.playwright.json` as the canonical Playwright MCP server config. If Claude Code requires a different config location, copy the contents without changing the qa-garage-level source.
+Use `config/mcp.playwright.json` as the canonical Playwright MCP server config.
+
+## Commands
+
+```bash
+npm run qa:knowledge
+npm run qa:review -- --gate
+npm run qa:discover -- "charter"
+npm run qa:proposal -- "goal"
+npm run qa:smoke
+npm run qa:report
+```
 
 ## Guardrail
 
-Claude may draft tests, reports, and bug reports. It must not change assertions, delete tests, skip tests, update baselines, redefine expected behavior, promote observed/inferred knowledge to confirmed, or mark human review approved without human approval. Honor the readiness gate (`npm run qa:review -- --gate`).
+Claude may draft tests, reports, proposals, and job schedules. It must not change assertions, promote knowledge to confirmed, send client proposals, or mark human review approved without human approval. Honor the execution gate. End sessions with `knowledge-curator`.

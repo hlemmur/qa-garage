@@ -10,16 +10,24 @@ Before QA-related work, read:
 - `core/ai/qa-principles.md`
 - `core/ai/qa-garage-operating-model.md`
 - `core/ai/qa-project-context-model.md`
+- `core/ai/discovery-workflow.md`
+- `core/ai/knowledge-maintenance.md`
+- `core/ai/test-design-principles.md`
+- `core/ai/human-decides-loop.md`
 - `core/ai/daily-qa-loop.md`
 - `core/ai/task-tracking-workflow.md`
+- `core/ai/qa-cadence.md`
+- `core/ai/scope-proposal-workflow.md`
 
-Then use the vendored skills in `.agents/skills/` for QA craft (context, risk, strategy, journeys, exploration, repro, Playwright authoring, reporting). The harness layer routes which skill applies; see the skill-routing table in `core/ai/qa-garage-operating-model.md`.
+Then use the vendored skills in `.agents/skills/` for QA craft. The harness routes via `core/ai/qa-garage-operating-model.md` and thin wrappers in `core/skills/`.
 
-Each target project is treated as its own QA root at `projects/<project>/`, with a single source of truth at `projects/<project>/.agents/qa-project-context.md`. Targets are black-box: skip codebase detection and source context from docs and exploration.
+Each target project is its own QA root at `projects/<project>/`. Read `.agents/qa-project-context.md` and `reference/` first. Targets are black-box: source from docs and exploration.
 
-Use deterministic automation as the source of truth. Playwright output, traces, screenshots, videos, reports, `projects/<project>/.agents/qa-project-context.md`, and `projects/<project>/tasks/qa-tasks.md` outrank unsourced AI judgment.
+Use deterministic automation as the source of truth. Playwright output, traces, reports, `qa-project-context.md`, `reference/`, and `tasks/qa-tasks.md` outrank unsourced AI judgment.
 
-AI may explore, reproduce bugs, draft tests, suggest fixes, classify failures, write reports, track task progress, and recommend improvements.
+End every session with harness `knowledge-curator` (see `knowledge-maintenance.md`).
+
+AI may explore, reproduce bugs, draft tests, propose jobs, draft scope proposals, classify failures, write reports, and recommend improvements.
 
 AI must not automatically:
 
@@ -27,14 +35,14 @@ AI must not automatically:
 - Delete or skip tests.
 - Update visual baselines.
 - Redefine expected behavior.
-- Promote observed or inferred knowledge to confirmed expected behavior.
+- Promote observed or inferred knowledge to confirmed.
 - Mark human review as approved without approval.
+- Send client proposals without QA Lead approval.
 - Hide or relabel failures to make a run look green.
 
-Those actions require explicit human approval.
+## Gates
 
-## Readiness Gate
+- **Discovery gate (soft):** Phase 0 and reference updates are not blocked by access questions.
+- **Execution gate:** Do not begin execution-gated work while blocking items exist in `open-items.md` unless `decisions.md` overrides. Run `QA_PROJECT=<project> npm run qa:review -- --gate`.
 
-Do not begin execution work (exploration, test authoring, regression runs that gate a release) for a project while blocking open items exist in `projects/<project>/open-items.md`, unless `projects/<project>/decisions.md` records an explicit human override. Run `QA_PROJECT=<project> npm run qa:review -- --gate` to check; a non-zero exit means blocking items remain.
-
-End every working turn that produced open items with an ACTION REQUIRED summary listing what needs human decision.
+End every working turn that produced open items with an ACTION REQUIRED summary. Humans answer via `questions.md` and `decisions.md` — see `human-decides-loop.md`.

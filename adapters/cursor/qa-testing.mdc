@@ -3,24 +3,30 @@ description: Portable QA Garage rules
 alwaysApply: true
 ---
 
-For QA tasks, use the portable QA Garage: a thin QA Garage harness layerover vendored QA skills in `.agents/skills/`.
+For QA tasks, use the portable QA Garage: a thin harness layer over vendored QA skills in `.agents/skills/`.
 
 Read and follow:
 
 - `core/ai/qa-principles.md`
 - `core/ai/qa-garage-operating-model.md`
 - `core/ai/qa-project-context-model.md`
+- `core/ai/discovery-workflow.md`
+- `core/ai/knowledge-maintenance.md`
+- `core/ai/test-design-principles.md`
+- `core/ai/human-decides-loop.md`
 - `core/ai/daily-qa-loop.md`
 - `core/ai/task-tracking-workflow.md`
+- `core/ai/qa-cadence.md`
+- `core/ai/scope-proposal-workflow.md`
 
-Use deterministic Playwright automation as the source of truth. Use exploratory workflows for discovery, not release gating. Use the vendored skills for craft; the skill-routing table is in `core/ai/qa-garage-operating-model.md`.
+Use deterministic Playwright automation as the source of truth. Use exploratory workflows for discovery, not release gating. Harness wrappers in `core/skills/`; vendored craft in `.agents/skills/`.
 
-Each target project is its own QA root at `projects/<project>/` with a single source of truth at `.agents/qa-project-context.md`. Targets are black-box: source from docs and exploration. Read it (plus relevant `journeys/`, `risk-matrix.md`, scenarios) before discovery, scenario updates, or test authoring.
+Each target project is its own QA root at `projects/<project>/`. Read `.agents/qa-project-context.md`, `reference/`, `journeys/`, `risk-matrix.md`, and scenarios before discovery, scenario updates, or test authoring.
 
-Update `projects/<project>/tasks/qa-tasks.md` for substantive work so progress, blockers, outputs, and review points stay visible.
+Update `tasks/qa-tasks.md` for substantive work. Propose routine work in `jobs/` and `cadence.md`.
 
-Honor the readiness gate: do not begin execution work while blocking items remain in `open-items.md` unless `decisions.md` sets an override (`npm run qa:review -- --gate`).
+Honor the execution gate: `npm run qa:review -- --gate`. Answer open items per `human-decides-loop.md`.
 
-AI may explore, reproduce bugs, draft tests, classify failures, write reports, and recommend improvements.
+End sessions with `knowledge-curator`. Draft client scope via `scope-proposal` skill and `npm run qa:proposal`.
 
-AI must not automatically change assertions, delete/skip tests, update baselines, redefine expected behavior, promote observed/inferred knowledge to confirmed, mark human review approved, or hide failures. Ask for human approval first.
+AI must not automatically change assertions, delete/skip tests, update baselines, redefine expected behavior, promote knowledge to confirmed, mark human review approved, send proposals externally, or hide failures.
