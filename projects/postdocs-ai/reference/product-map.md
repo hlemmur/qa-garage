@@ -1,44 +1,49 @@
 # Product Map
 
-Surfaces, navigation, and major UI states discovered or confirmed from documentation. App layout unverified until Phase 0B exploration.
+Surfaces, navigation, and major UI states discovered or confirmed from documentation and Phase 0B app exploration.
 
 | ID | Surface / area | Navigation path | Important states | Status | Source | Last verified | Evidence | Links |
 |----|----------------|-----------------|------------------|--------|--------|---------------|----------|-------|
-| PM-001 | Sign-in / landing | https://app.postdocs.ai/ → university SSO or Microsoft | Unauthenticated; auth in progress; authenticated landing | inferred | docs:https://learn.postdocs.ai/guides | 2026-07-07 | Guides Step 1 | F-021, UC-015 |
-| PM-002 | Grants list | Sidebar → Grants | List loaded; filtered; empty results; loading | inferred | docs:https://learn.postdocs.ai/guides | 2026-07-07 | Guides Step 2 | F-001, F-002, UC-001 |
-| PM-003 | Grant detail | Grants list → click grant | Detail view; requirements; deadline; eligibility summary | inferred | docs:https://learn.postdocs.ai/guides | 2026-07-07 | Guides Step 2 | UC-001, R-003 |
-| PM-004 | Bookmarks / bookmark groups | Grants area (bookmark action + folder filter) | Bookmarked; unbookmarked; group selected | inferred | docs:https://learn.postdocs.ai/features | 2026-07-07 | Features › Bookmark & Organize | F-003, F-004 |
-| PM-005 | Proposals list | Sidebar → Proposals (inferred) | Empty; has proposals; loading | inferred | docs:https://learn.postdocs.ai/guides | 2026-07-07 | Guides Step 3 | UC-004 |
-| PM-006 | Create proposal / grant picker | Proposals → Create proposal → search grant | Search results; grant selected | inferred | docs:https://learn.postdocs.ai/guides | 2026-07-07 | Guides Step 3 | UC-004, F-005 |
-| PM-007 | Setup page | New proposal → Setup tab | Uploads present; synopsis empty/filled; ready to generate | inferred | docs:https://learn.postdocs.ai/features | 2026-07-07 | Features › Three-Step Workflow; Guides Step 4 | F-007–F-009, UC-005 |
-| PM-008 | Project description editor | Setup → Generate Project Description → editor | Section list; generating; draft ready; editing | inferred | docs:https://learn.postdocs.ai/guides | 2026-07-07 | Guides Step 5 | F-010–F-012, UC-006 |
-| PM-009 | Submission-form generator | After project description (third workflow step) | Form fields empty; generated; editing | inferred | docs:https://learn.postdocs.ai/features | 2026-07-07 | Features › Three-Step Workflow | F-013, UC-008 |
-| PM-010 | Review — eligibility | Review area (inferred tab/section) | Requirements listed; checkboxes unchecked/checked | inferred | docs:https://learn.postdocs.ai/features | 2026-07-07 | Features › Eligibility checking | F-014, UC-009 |
-| PM-011 | Review — assessment | Review area | Criteria visible; assessment running; feedback shown | inferred | docs:https://learn.postdocs.ai/features | 2026-07-07 | Features › Assessment criteria | F-015, UC-010 |
-| PM-012 | Export toolbar | Proposal editor toolbar → Export | Export ready; download in progress; .docx downloaded | inferred | docs:https://learn.postdocs.ai/guides | 2026-07-07 | Guides Step 6; FAQ export | F-020, UC-014 |
-| PM-013 | Share / invite dialog | Proposal → share/invite (inferred) | Email entry; permission selector (view/comment/edit); invite sent | inferred | docs:https://learn.postdocs.ai/features | 2026-07-07 | Features › Team collaboration; FAQ | F-016, F-019, UC-011 |
-| PM-014 | Collaborative editor (shared) | Open shared proposal | Presence indicators; concurrent edits; comments panel | inferred | docs:https://learn.postdocs.ai/features | 2026-07-07 | Features › Team collaboration | F-017, F-018, UC-012 |
+| PM-001 | Sign-in / landing | https://app.postdocs.ai/ → `/auth` → Microsoft or university SSO | Unauthenticated; auth in progress; authenticated redirect to `/home` | observed | app:2026-07-07 | 2026-07-07 | session log; app report | F-021, UC-015 |
+| PM-002 | Home dashboard | Sidebar → Home → `/home` | Grants summary; profile card; recent proposals | observed | app:2026-07-07 | 2026-07-07 | session log | UC-004 |
+| PM-003 | Grants list | Sidebar → Grants → `/grants` | List loaded; filtered; bookmarked toggle; empty results | observed | app:2026-07-07 | 2026-07-07 | session log | F-001, F-002, UC-001 |
+| PM-004 | Grant detail | Grants list → click grant | Detail view; requirements; deadline; eligibility summary | inferred | docs:https://learn.postdocs.ai/guides | 2026-07-07 | Guides Step 2 | UC-001, R-003 |
+| PM-005 | Bookmarks / bookmark groups | Grants → Bookmarked toggle + per-row bookmark | Bookmarked; unbookmarked; group filter | observed | app:2026-07-07 | 2026-07-07 | session log | F-003, F-004 |
+| PM-006 | Proposals list | Sidebar → Proposals → `/proposals` | Empty; has proposals (In progress); search | observed | app:2026-07-07 | 2026-07-07 | session log | UC-004 |
+| PM-007 | Create proposal / grant picker | Proposals → Create proposal → modal | Search results; grant selected | observed | app:2026-07-07 | 2026-07-07 | session log | UC-004, F-005 |
+| PM-008 | Setup page | Proposal → Setup tab → `/steps/quiz` | Uploads; synopsis; start modes; ready to generate | observed | app:2026-07-07 | 2026-07-07 | session log | F-007–F-009, UC-005 |
+| PM-009 | Project description editor | Setup → Generate → `/steps/project` | Section list; generating; draft; rich-text editing | observed | app:2026-07-07 | 2026-07-07 | session log | F-010–F-012, UC-006 |
+| PM-010 | Form & attachments | Step switcher → Form & attachments | Form fields; attachments (not fully toured) | observed | app:2026-07-07 | 2026-07-07 | session log | F-013, UC-008 |
+| PM-011 | Review — assessment | Right panel → Review | Criteria visible; Review proposal action | observed | app:2026-07-07 | 2026-07-07 | session log | F-015, UC-010 |
+| PM-012 | Download project description | Editor toolbar | Download in progress; .docx downloaded | observed | app:2026-07-07 | 2026-07-07 | session log | F-020, UC-014 |
+| PM-013 | Share / invite dialog | Proposal → Open menu → Invite | Email entry; permission selector (unverified) | inferred | docs:https://learn.postdocs.ai/features | 2026-07-07 | Open menu observed; dialog not opened | F-016, F-019, UC-011 |
+| PM-014 | Collaborative editor (shared) | Open shared proposal | AI Collaborator, Comments panels observed | partial | app + docs | 2026-07-07 | session log | F-017, F-018, UC-012 |
+| PM-015 | Learn (docs) | Sidebar → Learn | External documentation link | observed | app:2026-07-07 | 2026-07-07 | session log | — |
 
 ## Navigation overview
 
-Documented top-level areas (inferred from guides):
+Confirmed authenticated structure (Phase 0B):
 
 ```text
 app.postdocs.ai
-├── Sign in (university SSO | Microsoft)
+├── /auth — Sign in (Microsoft | university SSO)
 └── Authenticated app
-    ├── Grants          (sidebar) — browse, search, filter, bookmark, detail
-    ├── Proposals       (sidebar) — list, create, open proposal
-    └── Proposal workspace (per proposal)
-        ├── Setup tab
-        ├── Project description editor
-        ├── Submission-form texts (workflow step 3)
-        ├── Review (eligibility + assessment)
-        ├── Export (toolbar)
-        └── Share / collaborate
+    ├── /home           (sidebar Home) — dashboard, recent proposals
+    ├── /grants         (sidebar Grants) — browse, search, filter, bookmark
+    ├── /proposals      (sidebar Proposals) — list, create, open proposal
+    ├── Learn           (sidebar) — external docs
+    └── Proposal workspace  /proposals/{uuid}/steps/{step}
+        ├── /steps/quiz     — Setup (UI label)
+        ├── /steps/project  — Project Description (rich-text editor)
+        ├── Form & attachments (step 3; slug TBD)
+        ├── Right rail: AI Collaborator | Sections | Comments | Review | Sources
+        ├── Download Project Description (toolbar)
+        └── Open menu: Invite | Duplicate | Open call text | Delete
 ```
 
 ## Notes
 
-- Exact sidebar labels, tab names, and URL routes are **inferred** from guides; confirm in Phase 0B app exploration.
+- Setup UI label is **Setup**; URL slug is **`quiz`** (not `setup`).
+- Export control is labeled **Download Project Description**, not "Export".
 - Documentation site (https://learn.postdocs.ai/) is separate from the product app (https://app.postdocs.ai/).
+- Eligibility checkboxes (F-014) not located in Review panel during this tour — may live elsewhere.

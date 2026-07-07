@@ -28,14 +28,14 @@ Single source of truth for postdocs-ai. Black-box target: facts are sourced from
 
 Black-box: the target's implementation is not directly observable. Recorded at the confidence level available.
 
-- Frontend: SPA (framework unknown; to confirm by exploration).
-- Rich-text / collaborative editor: inferred TipTap-style collaborative editor (unconfirmed; requires engineering or repo access).
-- AI drafting backend: confirmed an AI generation service produces sections and form texts; provider/model unknown (inferred candidates such as Vercel AI SDK are unconfirmed).
-- Auth/data platform: inferred (candidates such as Supabase are unconfirmed; requires engineering access).
+- Frontend: SPA (framework unknown; React-like shell observed).
+- Rich-text / collaborative editor: rich-text toolbar observed on Project Description step; TipTap-style editor unconfirmed (requires engineering or repo access).
+- AI drafting backend: AI Collaborator chat and **Generate project description** observed; provider/model unknown.
+- Auth/data platform: **Supabase auth observed** — OAuth callback at `supabase.postdocs.ai/auth/v1/callback` (observed 2026-07-07). Remaining stack (DB, realtime) unconfirmed.
 - Confirmed external integrations (docs): university SSO, Microsoft sign-in, AI drafting service, file upload and document parsing (PDF, Word, PowerPoint), email invitations, Microsoft Word .docx export, funding-agency data sources (VR, Formas, Vinnova, Energimyndigheten).
 - Data handling (docs FAQ, inferred): stored in EU; not shared with third parties except invited collaborators; user retains content ownership; no AI model training on user-provided data.
 - Access model (docs FAQ, inferred): institutional partnerships via research office; not self-serve subscription (contact timothy@postdocs.ai).
-- EU grants (Horizon Europe, ERC): planned expansion; not yet available (docs FAQ, inferred).
+- EU grants (Horizon Europe, ERC): docs FAQ says planned expansion; **EU calls already appear in production grants browse** with suspected stale Open statuses (observed 2026-07-07 — see KI-001, Q-008).
 - Concrete technical integrations (Supabase, TipTap, Vercel AI, etc.): unknown until repo or engineering access is granted; tracked as a blocking question for the technical QA phase.
 
 ## Test Stack
@@ -55,13 +55,13 @@ Black-box: the target's implementation is not directly observable. Recorded at t
 
 - Target under test: production app at https://app.postdocs.ai/ — approved for exploratory testing (D-001). No staging available.
 - Access model: institutional partnerships; access via research office or product contact (timothy@postdocs.ai).
-- Approved test accounts: see `test-data.md` allowlist (D-002, D-003). Primary owner `leka.mulyar@gmail.com` (passkey); collaborators `omulyar.work@gmail.com`, `lena.m.coaching@gmail.com`.
+- Approved test accounts: see `test-data.md` allowlist and `config/.env` (D-002, D-003). Credentials never in repo; use `config/.env.example` for variable names.
 - Upload/collaboration in production: approved with synthetic mock data only; invites restricted to allowlist (D-003).
 - Mock vs real integrations: product mock mode for AI generation, SSO, email, and document parsing is unknown (Q-004).
 
 ## Quality Goals
 
-- Coverage first: authenticated smoke (sign-in reaches a stable landing) then the create-and-generate-proposal journey.
+- Coverage first: authenticated smoke (post-auth `/home` with Grants/Proposals nav — proposed Q-005) then create-and-generate-proposal journey using Vinnova fixture grant.
 - Flakiness threshold: under 2 percent for deterministic suites (AI-output and collaboration checks excluded from flake tracking).
 - Suite duration budget: smoke under 5 minutes.
 - Key metrics: zero broken critical journeys; AI-generation workflow completes and returns output; no data-privacy regression in upload/collaboration flows.

@@ -48,6 +48,7 @@ Questions awaiting a human answer. `qa:review` aggregates these into `open-items
 - Raised by: agent
 - Date: 2026-07-07
 - Why it matters: defines the smoke success criterion (which landing page/element).
+- Proposed answer / options: After human-assisted Microsoft auth, assert (1) URL is `/home`, (2) sidebar links **Grants** and **Proposals** are visible, (3) user display name visible. Does not exercise AI or uploads. Source: Phase 0B app report.
 - Answer:
 
 ### Q-006: Which fixture materials are approved for upload and generation tests?
@@ -57,6 +58,7 @@ Questions awaiting a human answer. `qa:review` aggregates these into `open-items
 - Raised by: agent
 - Date: 2026-07-07
 - Why it matters: uploads must use non-sensitive mock content only.
+- Proposed answer / options: Synthetic mock PDF/Word/PPT under `fixtures/` (to be created). Stable grant fixture: **Innovative startups 2026** (Vinnova). Existing proposal **Brain health 2026** available in owner workspace for read-only tours.
 - Answer:
 
 ### Q-007: What upload file types, size limits, and validation errors should QA expect?
@@ -76,6 +78,7 @@ Questions awaiting a human answer. `qa:review` aggregates these into `open-items
 - Raised by: agent
 - Date: 2026-07-07
 - Why it matters: R-003 is a no-go risk; need visible metadata or product validation rules.
+- Proposed answer / options: Spot-check grant status/deadline vs authoritative funder page; investigate KI-001 (EU Horizon 2023 calls marked Open). No in-app "last updated" metadata observed.
 - Answer:
 
 ### Q-009: What collaborator permission levels are selectable in the UI?
@@ -113,14 +116,15 @@ Questions awaiting a human answer. `qa:review` aggregates these into `open-items
 - Raised by: agent
 - Date: 2026-07-07
 - Why it matters: unblocks Phase 2 technical QA; candidates (Supabase, TipTap, Vercel AI) are inferred and unconfirmed. Needs repo or engineering access.
+- Proposed answer / options: **Supabase auth confirmed** (OAuth callback `supabase.postdocs.ai`). Editor framework, AI provider, and DB/realtime layer still unknown.
 - Answer:
 
 ### Q-013: Is "Setup" the same surface as "Outline step" in Tips & Tricks?
 
-- Status: open
+- Status: answered
 - Blocking: no
 - Raised by: agent
 - Date: 2026-07-07
 - Why it matters: docs use both terms; test navigation and selectors need one canonical label.
 - Proposed answer / options: likely the same page (Guides Step 4 "Complete the setup" vs Tips "Go back to Outline step").
-- Answer:
+- Answer: **Same surface.** UI label is **Setup**; URL slug is `/steps/quiz`. Docs "Outline" maps to the Synopsis/structured fields on Setup (observed Phase 0B).

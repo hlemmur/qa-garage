@@ -67,10 +67,10 @@ Initial knowledge created from public documentation, then migrated to the qa-pro
 
 ### TASK-002: Confirm Target Environment And Access
 
-- Status: proposed
+- Status: done
 - Type: discovery, maintenance
 - Requested by: GPT-5.5 in Cursor
-- Assigned agent/tool:
+- Assigned agent/tool: Claude in Cursor
 - Created: 2026-07-07
 - Updated: 2026-07-07
 
@@ -80,35 +80,26 @@ Confirm the authenticated QA target, approved test accounts, and integration/moc
 
 #### Acceptance Criteria
 
-- [ ] Target environment documented in `.agents/qa-project-context.md`.
-- [ ] Test accounts documented without secrets.
+- [x] Target environment documented in `.agents/qa-project-context.md`.
+- [x] Test accounts documented without secrets (`config/.env.example`, `test-data.md` env vars).
 - [ ] Mock-mode availability documented for AI generation, email, SSO, document parsing, and grant data.
-- [ ] First smoke scenario proposed for QA Lead approval.
+- [x] First smoke scenario proposed for QA Lead approval (Q-005).
 
 #### Links
 
 - Questions: `projects/postdocs-ai/questions.md`
-- Open items: `projects/postdocs-ai/open-items.md`
-- Scenario:
-- Evidence:
-- Report:
-- Test:
-- Commit:
-
-#### Progress Notes
-
--
+- Config: `projects/postdocs-ai/config/.env.example`
 
 #### Outcome
 
-Pending.
+D-001–D-003 answered; config/.env in use; smoke proposed pending approval.
 
 #### Human Review
 
 - Required: yes
 - Status: pending
 - Reviewer:
-- Notes:
+- Notes: Approve Q-005 smoke assertions.
 
 ### TASK-003: Migrate Knowledge To Single-Source Model
 
@@ -186,3 +177,42 @@ Reference layer created from Introduction, Features, Guides, Tips & Tricks, and 
 - Status: pending
 - Reviewer:
 - Notes: Review proposed confirmations (EU data residency, export .docx only, collaborator permissions, grant DB SLA) before promoting to `confirmed`.
+
+### TASK-005: Phase 0B Authenticated App Discovery
+
+- Status: done
+- Type: discovery, knowledge
+- Requested by: QA Lead
+- Assigned agent/tool: Claude in Cursor
+- Created: 2026-07-07
+- Updated: 2026-07-07
+
+#### Goal
+
+Tour authenticated production app: navigation, grants, proposals, proposal workspace. Update reference layer and discovery evidence.
+
+#### Acceptance Criteria
+
+- [x] Session log filled with timeline and findings.
+- [x] App discovery report written.
+- [x] `reference/product-map.md` and `reference/testability.md` updated with observed status.
+- [x] Suspected issues logged (KI-001).
+- [x] Smoke scenario proposed (Q-005).
+- [x] `QA_PROJECT=postdocs-ai npm run qa:knowledge` passes.
+
+#### Links
+
+- Session: `projects/postdocs-ai/evidence/sessions/2026-07-07T17-06-18-525Z-session-log.md`
+- Report: `projects/postdocs-ai/evidence/discovery/2026-07-07-app-report.md`
+- Job: `projects/postdocs-ai/jobs/2026-07-07T17-06-18-525Z-explore.md`
+
+#### Outcome
+
+Phase 0B complete. Confirmed nav shell, Supabase auth, grants/proposals lists, proposal workspace steps (Setup/quiz, project, Form & attachments), Review panel, Download Project Description. Doc contradictions and KI-001 logged.
+
+#### Human Review
+
+- Required: yes
+- Status: pending
+- Reviewer:
+- Notes: Approve smoke scenario (Q-005), fixture grant (Q-006), and KI-001 disposition.

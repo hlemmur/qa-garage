@@ -13,7 +13,8 @@ targets:
     name: postdocs.ai
     project: postdocs-ai
     environment: production
-    targetUrl: "data:text/html,<title>postdocs.ai QA placeholder</title><h1>OK</h1>"
+    targetUrl: "https://app.postdocs.ai/"
     notes:
-      - Replace with https://app.postdocs.ai/ once test accounts and QA Lead approval exist.
+      - Production exploratory testing approved (D-001). Human-in-the-loop Microsoft auth.
       - Public docs at https://learn.postdocs.ai/ for discovery only.
+      - Secrets in projects/postdocs-ai/config/.env (see .env.example).

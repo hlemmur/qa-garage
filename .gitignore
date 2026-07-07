@@ -5,6 +5,8 @@ dist/
 .env.*
 !.env.example
 !projects/**/target.env.example
+projects/**/config/.env
+!projects/**/config/.env.example
 
 playwright-report/
 test-results/
