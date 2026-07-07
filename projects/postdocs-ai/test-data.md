@@ -19,7 +19,7 @@ At least 4-5 distinct accounts are required to cover collaboration, permission b
 
 ## Data Sets / Fixtures
 
-- Non-sensitive mock research synopsis and background materials (PDF, Word, PowerPoint) - to be created; never real confidential proposals.
+- Non-sensitive mock research synopsis and background materials — docs-supported types: PDF, Word, PowerPoint (`docs:https://learn.postdocs.ai/tips-and-tricks`). Fixtures to be created; never real confidential proposals. Size limits unknown (Q-007).
 - Known open grant call (e.g. a VR/Formas/Vinnova/Energimyndigheten call) for template-load and discovery checks - identify a stable example.
 
 ## Creation & Cleanup Strategy

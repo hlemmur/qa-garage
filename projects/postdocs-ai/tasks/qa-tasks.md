@@ -149,3 +149,40 @@ Migration complete. Content preserved from documentation-based discovery; integr
 - Status: pending
 - Reviewer:
 - Notes: Approve target environment, test accounts, privacy sign-off, and the first smoke scenario (blocking items in open-items.md).
+
+### TASK-004: Populate Reference Layer From Docs
+
+- Status: done
+- Type: knowledge, discovery
+- Requested by: QA Lead
+- Assigned agent/tool: Claude in Cursor
+- Created: 2026-07-07
+- Updated: 2026-07-07
+
+#### Goal
+
+After harness redesign, re-analyze https://learn.postdocs.ai/ and fill the missing `reference/` knowledge layer for postdocs-ai.
+
+#### Acceptance Criteria
+
+- [x] `reference/` contains all five required files plus README.
+- [x] Features, use cases, product map, glossary, and testability populated from docs with inline provenance.
+- [x] Discovery report written to `evidence/discovery/`.
+- [x] `QA_PROJECT=postdocs-ai npm run qa:knowledge` passes.
+
+#### Links
+
+- Reference: `projects/postdocs-ai/reference/`
+- Discovery report: `projects/postdocs-ai/evidence/discovery/2026-07-07-docs-report.md`
+- Evidence: https://learn.postdocs.ai/
+
+#### Outcome
+
+Reference layer created from Introduction, Features, Guides, Tips & Tricks, and FAQ. 23 features, 16 use cases, 14 product-map surfaces, 13 glossary terms, 14 testability rows. All marked `inferred` or `unknown` pending app exploration and human confirmation.
+
+#### Human Review
+
+- Required: yes
+- Status: pending
+- Reviewer:
+- Notes: Review proposed confirmations (EU data residency, export .docx only, collaborator permissions, grant DB SLA) before promoting to `confirmed`.
