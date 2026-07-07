@@ -1,5 +1,5 @@
 ---
-description: Playwright authoring rules for QA harness tests
+description: Playwright authoring rules for QA Garage tests
 globs:
   - "**/*.spec.ts"
 alwaysApply: false
@@ -8,18 +8,18 @@ alwaysApply: false
 Before writing or changing Playwright tests, read:
 
 - `core/ai/qa-principles.md`
-- `core/ai/test-authoring-workflow.md`
+- The `playwright-automation` skill in `.agents/skills/playwright-automation/` (patterns, selectors, fixtures, network mocking).
 
-Use Playwright for deterministic smoke, regression, visual, and user-journey coverage.
+Use Playwright for deterministic smoke, regression, visual, and user-journey coverage. Assert only behavior that is confirmed in `projects/<project>/.agents/qa-project-context.md`, an approved scenario, or an approved bug report.
 
 Prefer:
 
-- User-facing locators.
+- User-facing locators (`data-testid` or pinned ARIA roles per the project's Conventions).
 - Observable assertions.
 - Clear setup and preconditions.
 - Small, diagnostic tests.
 - Traces and screenshots for failure evidence.
 
-Avoid arbitrary waits, hidden retries, broad assertions, and implementation-coupled selectors.
+Avoid arbitrary waits, hidden retries, broad assertions, and implementation-coupled selectors. For flaky tests or broken selectors, use `test-reliability` and `selector-drift-recovery`.
 
 Do not change assertions, delete tests, skip tests, or update baselines without human approval.

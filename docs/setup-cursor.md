@@ -1,8 +1,8 @@
 # Cursor Setup
 
-Cursor can use this harness directly in this repository or as an adapter copied into a target project.
+Cursor can use this QA Garage directly in this repository or as an adapter copied into a target project.
 
-## In This Harness
+## In This Garage
 
 The active rules live in:
 
@@ -12,8 +12,11 @@ The active rules live in:
 Cursor agents should read the core files before QA work:
 
 - `core/ai/qa-principles.md`
-- `core/ai/agent-operating-model.md`
+- `core/ai/garage-operating-model.md`
+- `core/ai/qa-project-context-model.md`
 - `core/ai/daily-qa-loop.md`
+
+QA craft lives in the vendored skills under `.agents/skills/` (Cursor surfaces them automatically). The garage layer never edits skill bodies; it routes them via the table in `core/ai/garage-operating-model.md`.
 
 ## In A Target Project
 
@@ -24,7 +27,7 @@ mkdir -p .cursor/rules
 cp path/to/qa-garage/adapters/cursor/*.mdc .cursor/rules/
 ```
 
-If the harness remains external, update paths in the copied rules so they point back to the harness checkout.
+If the garage remains external, update paths in the copied rules so they point back to the garage checkout.
 
 ## Playwright MCP
 
@@ -34,6 +37,7 @@ Use `config/mcp.playwright.json` as the canonical Playwright MCP reference. Curs
 
 ```bash
 npm run qa:smoke
+npm run qa:review -- --gate
 npm run qa:explore -- "charter name"
 npm run qa:report
 ```

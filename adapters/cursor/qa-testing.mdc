@@ -1,24 +1,26 @@
 ---
-description: Portable QA harness rules
+description: Portable QA Garage rules
 alwaysApply: true
 ---
 
-For QA tasks, use the portable QA harness.
+For QA tasks, use the portable QA Garage: a thin garage layer over vendored QA skills in `.agents/skills/`.
 
 Read and follow:
 
 - `core/ai/qa-principles.md`
-- `core/ai/agent-operating-model.md`
+- `core/ai/garage-operating-model.md`
+- `core/ai/qa-project-context-model.md`
 - `core/ai/daily-qa-loop.md`
-- `core/ai/knowledge-base-workflow.md`
 - `core/ai/task-tracking-workflow.md`
 
-Use deterministic Playwright automation as the source of truth. Use exploratory workflows for discovery, not release gating.
+Use deterministic Playwright automation as the source of truth. Use exploratory workflows for discovery, not release gating. Use the vendored skills for craft; the skill-routing table is in `core/ai/garage-operating-model.md`.
 
-Read relevant `projects/<project>/knowledge/` files before discovery, scenario updates, or test authoring.
+Each target project is its own QA root at `projects/<project>/` with a single source of truth at `.agents/qa-project-context.md`. Targets are black-box: source from docs and exploration. Read it (plus relevant `journeys/`, `risk-matrix.md`, scenarios) before discovery, scenario updates, or test authoring.
 
-Update `projects/<project>/tasks/qa-tasks.md` for substantive project work so progress, blockers, outputs, and review points stay visible.
+Update `projects/<project>/tasks/qa-tasks.md` for substantive work so progress, blockers, outputs, and review points stay visible.
+
+Honor the readiness gate: do not begin execution work while blocking items remain in `open-items.md` unless `decisions.md` sets an override (`npm run qa:review -- --gate`).
 
 AI may explore, reproduce bugs, draft tests, classify failures, write reports, and recommend improvements.
 
-AI must not automatically change assertions, delete tests, skip tests, update baselines, redefine expected behavior, promote observed/inferred knowledge to confirmed, mark human review as approved, or hide failures. Ask for human approval first.
+AI must not automatically change assertions, delete/skip tests, update baselines, redefine expected behavior, promote observed/inferred knowledge to confirmed, mark human review approved, or hide failures. Ask for human approval first.

@@ -1,23 +1,7 @@
-import { existsSync, readdirSync } from 'node:fs';
+import { existsSync, readFileSync, readdirSync } from 'node:fs';
 import path from 'node:path';
 import { loadRuntimeConfig } from './utils/config';
-
-const requiredKnowledgeFiles = [
-  'README.md',
-  'product-map.md',
-  'glossary.md',
-  'personas.md',
-  'user-journeys.md',
-  'feature-inventory.md',
-  'expected-behavior.md',
-  'test-data.md',
-  'integrations.md',
-  'risks.md',
-  'known-issues.md',
-  'release-notes.md',
-  'decisions.md',
-  'questions.md'
-];
+import { validateContext } from './lib/context';
 
 function listProjects(rootDir: string, requestedProject: string | undefined): string[] {
   if (requestedProject) {
@@ -38,26 +22,23 @@ function listProjects(rootDir: string, requestedProject: string | undefined): st
 
 function validateProject(rootDir: string, project: string): string[] {
   const projectDir = path.join(rootDir, 'projects', project);
-  const knowledgeDir = path.join(projectDir, 'knowledge');
-  const errors: string[] = [];
+  const contextPath = path.join(projectDir, '.agents', 'qa-project-context.md');
 
   if (!existsSync(projectDir)) {
     return [`Project "${project}" does not exist at ${path.relative(rootDir, projectDir)}`];
   }
 
-  if (!existsSync(knowledgeDir)) {
-    return [`Project "${project}" is missing ${path.relative(rootDir, knowledgeDir)}`];
+  if (!existsSync(contextPath)) {
+    return [`Project "${project}" is missing ${path.relative(rootDir, contextPath)}`];
   }
 
-  for (const file of requiredKnowledgeFiles) {
-    const filePath = path.join(knowledgeDir, file);
+  // Templates are allowed to keep [placeholders]; real projects must fill them.
+  const allowPlaceholders = project === '_template';
+  const markdown = readFileSync(contextPath, 'utf8');
 
-    if (!existsSync(filePath)) {
-      errors.push(`Project "${project}" is missing ${path.relative(rootDir, filePath)}`);
-    }
-  }
-
-  return errors;
+  return validateContext(markdown, { allowPlaceholders }).map(
+    (error) => `Project "${project}": ${error}`
+  );
 }
 
 function main(): void {
@@ -74,7 +55,7 @@ function main(): void {
   const errors = projects.flatMap((project) => validateProject(config.rootDir, project));
 
   if (errors.length > 0) {
-    console.error('Knowledge validation failed:');
+    console.error('Context validation failed:');
     for (const error of errors) {
       console.error(`- ${error}`);
     }
@@ -82,7 +63,7 @@ function main(): void {
     return;
   }
 
-  console.log(`Knowledge validation passed for ${projects.length} project(s): ${projects.join(', ')}`);
+  console.log(`Context validation passed for ${projects.length} project(s): ${projects.join(', ')}`);
 }
 
 main();

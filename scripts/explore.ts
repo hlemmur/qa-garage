@@ -20,8 +20,8 @@ function renderSessionLog(charter: string): string {
 ## Required Reading
 
 - \`core/ai/qa-principles.md\`
-- \`core/ai/agent-operating-model.md\`
-- \`core/ai/exploratory-workflow.md\`
+- \`core/ai/garage-operating-model.md\`
+- The \`exploratory-testing\` and \`agentic-browser-testing\` skills in \`.agents/skills/\`
 
 ## Operator Notes
 
