@@ -86,16 +86,16 @@ AI must not:
 ## Recommended Flow
 
 1. Create or update a task before substantive project work.
-2. Link the task to project context and relevant knowledge files.
+2. Link the task to `.agents/qa-project-context.md` and relevant artifacts (journeys, risk matrix, scenarios).
 3. Work the task using the appropriate QA workflow.
 4. Link outputs: evidence, reports, knowledge updates, scenarios, tests, and commits.
 5. Record verification commands.
 6. Mark the task `done`, `blocked`, or `cancelled`.
 7. Add follow-up tasks when needed.
 
-## Relationship To Other Harness Layers
+## Relationship To Other Garage Layers
 
-- Knowledge base: what we know.
+- Project context (`.agents/qa-project-context.md`): what we know.
 - Scenario library: what we intend to test.
 - Task ledger: what agents were asked to do and what happened.
 - Reports and evidence: what was observed.
